@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="utf-8" />
@@ -16,11 +16,15 @@
     <link href="./assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <!-- <link href="./assets/css/demo.css" rel="stylesheet" /> -->
+
+        <script src="./assets/js/modernizr.js"></script>
+        <!-- Modernizr -->
+
 </head>
 
 <body class="index-page sidebar-collapse">
     <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="600">
+        <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="800">
             <div class="container">
                 <div class="navbar-translate">
                     <a class="navbar-brand" href="#top">
@@ -35,38 +39,38 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link  js-scroll-trigger" href="#solarpumping">
+                            <a class="nav-link  " href="#solarpumping">
                             <!-- href="javascript:void(0)" onclick="scrollToDownload()" -->
                                 <i class="now-ui-icons location_world"></i>
                                 <p>Solar Pumping</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  js-scroll-trigger" href="#thepump">
+                            <a class="nav-link  " href="#thepump">
                                 <i class="now-ui-icons business_bulb-63"></i>
                                 <p>The Sun Pump</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  js-scroll-trigger" href="#about">
+                            <a class="nav-link  " href="#about">
                                 <!-- <i class="now-ui-icons travel_info"></i> -->
                                 <p>About</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  js-scroll-trigger btn-round btn btn-info" href="https://encap-tech.snwbll.com/giving-portal" target="_blank">
+                            <a class="nav-link   btn-round btn btn-neutral btn-hover" href="https://encap-tech.snwbll.com/giving-portal" target="_blank">
                                 <i class="now-ui-icons ui-2_favourite-28"></i>
                                 <p>Donate!</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  js-scroll-trigger btn-round btn btn-neutral" href="buy" target="_blank">
+                            <a class="nav-link   btn-round btn btn-neutral" href="buy" target="_blank">
                                 <!-- <i class="now-ui-icons shopping_cart-simple"></i> -->
                                 <p>Buy a Pump</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#contact">
+                            <a class="nav-link " href="#contact">
                                 <!-- <i class="now-ui-icons ui-1_email-85"></i> -->
                                 <p>Contact</p>
                             </a>
@@ -82,14 +86,29 @@
         <div class="page-header clear-filter" filter-color="">
 <!-- look into the filter here -->
 
-            <div class="page-header-image" data-parallax="true" style="background-image: url('./assets/img/back1.jpg');">
+            <div class="page-header-image" data-parallax="true">
             </div>
             <div id="top" class="container">
                 <div class="content-center brand">
-                    <div class="spacer"></div>
+
                     <!-- <img class="n-logo" src="./assets/img/now-logo.png" alt=""> -->
-                    <h1 class="h1-seo">Sun Pump</h1>
-                    <h3>A revolutionary solar powered water pump.</h3>
+                    <!-- <h1 class="h1-seo">Sun Pump</h1>
+                    <h3>A revolutionary solar powered water pump.</h3> -->
+
+
+
+                    <section class="cd-intro">
+                        <h1 class="h1-seo cd-headline slide">
+                            <span>Sun Pump is </span>
+                            <span class="cd-words-wrapper">
+                                <b class="is-visible">eco-friendly</b>
+                                <b>portable</b>
+                                <b>affordable</b>
+                            </span>
+                        </h1>
+                    </section>
+                      
+
                 </div>
             </div>
         </div>
@@ -100,42 +119,66 @@
             </div>
 
 
-            <div id="solarpumping" class="section section-basic">
-            <div class="container">
-                <h3>Solar Pumping</h3>
-                <p> Throughout the world, many farmers rely simply on rainfall -- an unpredictable method -- for their livelihood. 
-                    Others use expensive, unreliable diesel-generator powered water pumps. 
-                    As climate change alters weather patterns and diesel becomes more expensive, these farmers may not be able to provide for themselves or their families. 
-                </p>
+            <div id="thepump" class="section section-basic">
+            <div class="container center">
+                <h3 class="list-title">Features of the Sun Pump</h3>
 
-                <p class="blockquote">
-                    "Many communities around the world have limited access to water. To reach deep groundwater reserves, diesel generated electricity
-                    is used in rural villages to power electric water pumps despite its high maintenance and diesel fuel requirements. Solar
-                    photovoltaic pumping systems offer a financially and environmentally sustainable source of power and can significantly reduce
-                    the cost of water extraction for rural communities." - The World Bank
-                </p>
-
-                <p>
-                    Solar Pumping (using solar panels to power a water pump) provides a sustainable, cost-effective solution to this pressing
-                    challenge. By harnessing solar power, farmers will save money, pollute less, and set themselves on a path to a better
-                    future.
-                </p>
-
-                <div class="toobig center">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5yQOD1lBbjg" allowfullscreen></iframe>
-                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/5yQOD1lBbjg" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe> -->
-                    </div>
-                </div>
+                <ul class="list">
+                    <li>
+                        Lowest price on the market for a reliable solar pump
+                    </li>
+                    <li>
+                        2 inch wide pump diamater (fits even in very narrow wells)
+                    </li>
+                    <li>
+                        Flow rate of 1/2 liter per second (1,800 L/hr)
+                    </li>
+                    <li>
+                        Can pull water from 7-20 meter depth
+                    </li>
+                    <li>
+                        Easy to remove and replace the pump impeller
+                    </li>
+                    <li>
+                        1 or 2 panels (24V) to provide 40-80W
+                    </li>
+                    <li>
+                        Portable Design (stores in easy-carry backpack)
+                    </li>
+                    <li>
+                        Can charge mobile phone and car battery
+                    </li>
+                </ul>
 
                 <div class="spacer"></div>
 
+                <!-- <div class="separator"></div>
+
+                <div class="spacer"></div> -->
+
+                <h3 class="list-title">Recommended Areas of Use</h3>
+                
+                <ul class="list">
+                    <li>
+                        Small farming (maize, wheat, etc)
+                    </li>
+                    <li>
+                        Livestock watering (cattle, sheep, etc)
+                    </li>
+                    <li>
+                        Household use (up to 1,800 liters/hour)
+                    </li>
+                </ul>
+
+                <div class="spacer"></div>
+
+                
+
                 <div class="center">
-                    <a href="solarpumping" class="arrow-button btn-arrow btn-border">
-                        <span >Learn More About Solar Pumping
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                x="0px" y="0px" viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
+                    <a target="_blank" href="pump.html" class="arrow-button btn-arrow btn-border">
+                        <span>More Pump Info
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
                                 <g>
                                     <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34" y2="12.9"></line>
                                     <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
@@ -145,74 +188,15 @@
                     </a>
                 </div>
 
-            </div>
-            </div>
+                    <div class="spacer"></div>
+                    
+                <div class="center">
+                    <a href="buy" target="_blank" class="btn btn-lg btn-primary btn-hover">
+                        Buy a Sun Pump Now!
+                        <i class="now-ui-icons shopping_cart-simple"></i>
+                    </a>
+                </div>
 
-
-            <div class="spacer-large">
-            </div>
-
-
-
-            <div id="thepump" class="section section-basic">
-            <div class="container">
-                <h3>The Sun Pump</h3>
-                <p class="lead"> The Sun Pump is a radically affordable, enviornmentally-friendly, solar water pumping system.
-                </p>
-                <p>
-                    Driven by motors from Encap Technologies, an industry leader in automotive manufacturing, 
-                    the Sun Pump channels solar energy through its 24V panels to deliver up to a half liter of water every minute.
-                    The solar panels can also be used to charge a mobile phone or car battery.
-                    At only 2 inches wide, the pump is able to fit into the narrowest of wells and bring water where it is needed.  
-                </p>
-
-                <div class="section" id="carousel">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-6">
-                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
-                                        <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
-                                    </ol>
-                                    <div class="carousel-inner" role="listbox">
-                                        <div class="carousel-item active">
-                                            <img class="d-block" src="assets/img/solarkit/photo1.jpg" alt="First slide">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>24V Solar Panel</h5>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block" src="assets/img/solarkit/photo2.jpg" alt="Second slide">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>Compact Design</h5>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block" src="assets/img/solarkit/photo3.jpg" alt="Third slide">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>Charges Phone or Car Battery</h5>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block" src="assets/img/solarkit/photo4.jpg" alt="Fourth slide">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>Portable and Durable</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                        <i class="now-ui-icons arrows-1_minimal-left"></i>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                        <i class="now-ui-icons arrows-1_minimal-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
 
@@ -221,7 +205,7 @@
                 <br/>
                 <a href='https://www.3dcontentcentral.com/download-model.aspx?catalogid=171&id=540141'>Download</a> -->
 
-
+<!-- 
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="card text-center">
@@ -240,7 +224,6 @@
                                             </svg>
                                         </span>
                                     </a>
-                                <!-- <a href="solarpumping" class="btn btn-primary">Sun Pump's Uses</a> -->
                             </div>
                         </div>
                     </div>
@@ -250,7 +233,6 @@
                             <div class="card-body">
                                 <h5 class="card-title">How does it work?</h5>
                                 <p class="card-text">The pump is able to deliver up to a half liter of water per second and charge a phone or car battery. All the while it maintains a portable design and affordable price tag. </p>
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                                     <a href="solarpumping" class="arrow-button arrow-button-small btn-arrow btn-border">
                                         <span>Sun Pump's Design
                                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -265,16 +247,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-
-                <div class="center">
-                    <a href="buy" target="_blank" class="btn btn-lg btn-primary">
-                        Buy a Sun Pump
-                        <i class="now-ui-icons shopping_cart-simple"></i>
-                    </a>
-                </div>
+                </div> -->
 
 
                 </div>
@@ -283,8 +256,63 @@
             </div>
 
 
-            <div class="spacer-large">
-            </div>
+            <div class="spacer-large"> </div>
+            
+
+                        <div id="solarpumping" class="section section-basic">
+                            <div class="container">
+                                <h3>Why a Solar Pump?</h3>
+                                <p> Throughout the world, many communities have limited access to water. 
+                                    Many rural villages rely on diesel-generators to power electric water pumps 
+                                    (despite their high maintenance and diesel fuel requirements)
+                                    or rainfall (despite its unpredictablity) for their livelihood.
+                                </p>
+                                <div class="separator-small"></div> 
+                                <p>
+                                    Solar Pumping (using solar panels to power an electric water pump) 
+                                    provides a sustainable, cost-effective solution for many rural communities worldwide.
+                                    By harnessing solar power, farmers will save money, protect the enviornment, and set themselves on a path to a better future.
+                                </p>
+                                <div class="spacer"></div>
+                        
+                                <!-- <p class="blockquote">
+                                    "Many communities around the world have limited access to water.
+                                     To reach deep groundwater reserves, diesel generated electricity
+                                    is used in rural villages to power electric water pumps despite its high maintenance and diesel fuel requirements.
+                                    Solar photovoltaic pumping systems offer a financially and environmentally sustainable source of power and can
+                                    significantly reduce the cost of water extraction for rural communities." - The World Bank
+                                </p> -->
+                        
+                                <div class="toobig center">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5yQOD1lBbjg" allowfullscreen></iframe>
+                                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/5yQOD1lBbjg" frameborder="0" allow="autoplay; encrypted-media"
+                                            allowfullscreen></iframe> -->
+                                    </div>
+                                </div>
+                        
+                                <div class="spacer"></div>
+                        
+                                <div class="center">
+                                    <a target="_blank" href="http://www.worldbank.org/en/topic/water/brief/solar-pumping" class="arrow-button btn-arrow btn-border">
+                                        <span>Learn More About Solar Pumping
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
+                                                <g>
+                                                    <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34" y2="12.9"></line>
+                                                    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="spacer-large">
+                        </div>
 
 
             <div id="about" class="section section-basic">
@@ -297,42 +325,7 @@
                 nations across the globe. 
                 </p>
                 
-                <div class="container">
-                    <div class="row center">
-                        <div class="col-md-5 center">
-                            <img src="assets/img/encaplogo.png" alt="Encap Tech Logo">
-                            <a href="http://www.encaptech.com" class="arrow-button-small btn-arrow btn-border">
-                                <span>Encap Technologies
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
-                                        <g>
-                                            <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34" y2="12.9"></line>
-                                            <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
-                                        </g>
-                                    </svg>
-                                </span>
-                            </a>
-                        </div>
-                            
-                        <!-- <div class="col-md-2">
-                            <h1> X </h1>
-                        </div> -->
-
-                        <div class="col-md-5 center">
-                            <img src="assets/img/globalgoodlogo.png" alt="Global Good Logo">
-                            <a href="http://www.intellectualventures.com/globalgood" class="arrow-button-small btn-arrow btn-border">
-                                <span>Global Good
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
-                                        <g>
-                                            <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34" y2="12.9"></line>
-                                            <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
-                                        </g>
-                                    </svg>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
+                
                 </div>
 
                 <div class="spacer"></div>
@@ -345,18 +338,23 @@
                          instead we are sharing our process, designs and products with all those interested in 
                          solving the issues of water access worldwide. </p>
                         
-                        <a href="opensource" class="arrow-button-small btn-arrow btn-border">
-                            <span>Learn more
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
-                                    <g>
-                                        <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34" y2="12.9"></line>
-                                        <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
-                                    </g>
-                                </svg>
-                            </span>
-                        </a>
                     </div>
+                </div>
+
+                <div class="spacer"></div>
+
+                <div class="center">
+                    <a target="_blank" href="about.html" class="arrow-button btn-arrow btn-border">
+                        <span>About Us
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9" x2="34" y2="12.9"></line>
+                                    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
                 </div>
 
 
@@ -475,20 +473,23 @@
 
 
             <div id="contact" class="section section-basic">
-            <div class="container"> 
+            <div class="container">
                 <h3>Contact</h3>
-                <p>If you have questions, feedback, or know somebody who might benefit from our pump, please contact us!</p>
+                    <p>If you have questions, feedback, know somebody who might benefit from our pump, 
+                        or want to learn more about our Open Source style design, please contact us!</p>
 
-                <p ></p>
-                   
-                <div class="email">
-                    <a href="mailto:info@sunpump.org">
-                        <i class="now-ui-icons ui-1_email-85"></i> info@sunpump.org
-                    </a>
-                </div>
+                    <p ></p>
+                    
+                    <div class="email">
+                        <a href="mailto:info@sunpump.org">
+                            <i class="now-ui-icons ui-1_email-85"></i> info@sunpump.org
+                        </a>
+                    </div>
 
             </div>
             </div>
+
+            <div class="spacer-large"></div>
 
 
 
@@ -498,22 +499,19 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="about">
-                                About Sun Pump
+                            <a href="about.html">
+                                Home
                             </a>
                         </li>
                         <li>
-                            <a href="https://http://www.encaptech.com/" target="_blank">
-                                Encap
+                            <a href="about.html">
+                                About
                             </a>
                         </li>
                         <li>
-                            <!-- <a href="http://www.intellectualventures.com/globalgood" target="_blank">
-                                Global Good
-                            </a> -->
-                        </li>
-                        <li>
-                            
+                            <a href="mailto:info@sunpump.org">
+                                <i class="fa fa-sm fa-envelope"></i>  info@sunpump.org
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -522,12 +520,8 @@
                     &copy;
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> Encap Tech
-                    
-                    <!-- Web design and code by 
-                    <a href="http://www.invisionapp.com" target="_blank">Invision</a> and
-                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>. -->
-               
+                    </script> Sun Pump
+                
                 </div>
                 
             </div>
@@ -550,5 +544,8 @@
 
 <!-- Plugin for smooth scrolling JavaScript -->
 <script src="./assets/js/plugins/jquery.easing.js" type="text/javascript"></script>
+
+<!-- Plugin for headline slide in JavaScript -->
+<script src="./assets/js/plugins/headline-slide.js"></script>
 
 </html>
