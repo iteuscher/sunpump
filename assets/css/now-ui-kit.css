@@ -124,6 +124,7 @@ Colors
     .list {
         padding-left: 10ex;
     }
+}
 @media only screen and (min-width: 1170px) {
     .list {
         padding-left: 25ex;
@@ -751,7 +752,7 @@ Colors
         }
         .btn-arrow svg * {
         stroke-width: 5;
-        stroke-color: transparent;
+        /* stroke-color: transparent; */
         }
         .btn-arrow:hover svg {
         opacity: 1;
@@ -5041,7 +5042,7 @@ Created using IcoMoon - icomoon.io
     display: inline-block;
     font: normal normal normal 14px/1 'Nucleo Outline';
     font-size: inherit;
-    speak: none;
+    /* speak: none; */
     text-transform: none;
     /* Better Font Rendering */
     -webkit-font-smoothing: antialiased;
@@ -5868,7 +5869,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .footer nav {
-    display: inline-block;
+    /* display: inline-block; */
     float: left;
 }
 
@@ -5885,7 +5886,7 @@ Created using IcoMoon - icomoon.io
 .footer ul li a {
     color: inherit;
     padding: 0.5rem;
-    font-size: 0.6em;
+    font-size: 0.67em;
     text-transform: uppercase;
     text-decoration: none;
 }
@@ -5895,7 +5896,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .footer .copyright {
-    font-size: 0.6em;
+    font-size: 0.73em;
     text-align: right;
     display: inline-block;
 }
