@@ -184,7 +184,7 @@ Colors
         }
 
         .cd-intro {
-        margin: 1em auto;
+        margin: 3em auto;
         }
         @media only screen and (min-width: 768px) {
         .cd-intro {
@@ -647,7 +647,7 @@ Colors
         transition: color 0.1s cubic-bezier(0.16, 0.08, 0.355, 1), background 0.1s cubic-bezier(0.16, 0.08, 0.355, 1);
         display: inline-block;
         cursor: pointer;
-        width: 100%;
+        width: 70%;
         min-width: 100px;
         min-width: 12rem;
         outline: none;
@@ -2955,10 +2955,19 @@ fieldset[disabled] .btn-link.active {
 }
 
 .btn-lg {
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 500;
     border-radius: 1rem;
+    padding: 18px 30px;
+    max-width:100%;
+    cursor: pointer;
+}
+@media (min-width: 400px)
+{
+    .btn-lg {
+    font-size: 1.4em;
     padding: 15px 40px;
+    }
 }
 
 .btn-lg.btn-simple {
