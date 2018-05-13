@@ -181,14 +181,11 @@ Colors
         width: 100%;
         /* max-width: 768px; */
         text-align: center;
-        }
-
-        .cd-intro {
-        margin: 3em auto;
+        margin: 2em auto;
         }
         @media only screen and (min-width: 768px) {
         .cd-intro {
-            margin: 3em auto;
+            margin: 5em auto;
         }
         }
         @media only screen and (min-width: 1170px) {
