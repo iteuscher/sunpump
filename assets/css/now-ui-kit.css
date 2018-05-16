@@ -33,7 +33,12 @@ Colors
 ===============================
 */
 
+::selection{
+}
 
+.spacer-small {
+    height: 2ex;
+}
 
 .spacer {
     height: 5ex;
@@ -56,6 +61,9 @@ Colors
     padding-right: 4px;
 }
 
+p {
+    font-size: 16px;
+}
 
 .header {
     height: 40vh;
@@ -102,6 +110,10 @@ Colors
     }
 }
 
+ul li {
+    font-size: 2.1ex;
+    line-height: 3.5ex;
+}
 
 .list li {
     font-size: 2.5ex;
@@ -117,17 +129,17 @@ Colors
     list-style-position: inside;
     margin: 0 auto;
     max-width: 95%;
-    padding-left: 5ex;
+    padding-left: 3ex;
 }
 
 @media only screen and (min-width: 768px) {
     .list {
-        padding-left: 10ex;
+        padding-left: 15ex;
     }
 }
 @media only screen and (min-width: 1170px) {
     .list {
-        padding-left: 25ex;
+        padding-left: 35ex;
     }
 }
 
@@ -135,10 +147,14 @@ Colors
     margin-bottom: 1.5ex;
 }
 
+.flush-header {
+    margin-bottom: 5px;
+}
 
 .email
 {
-    font-size: 1.1em;
+    font-size: 1.3em;
+    padding-left: 3ex;
 }
 
 .nav-link p{
@@ -147,30 +163,45 @@ Colors
 }
 
 .toobig {
-    max-width: 90%;
+    max-width: 95%;
 }
 .carousel-inner {
-    width: auto;
-    max-height: 90%;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 5ex;
 }
 
 @media (min-width: 400px) {
     .toobig{
-        max-width: 70%;
+        max-width: 85%;
     }
     .carousel-inner {
-    width: auto;
-    height: 90%;
-}
+    width: 65%;
+    height: auto;
+    }
 }
 @media (min-width: 990px) {
     .toobig{
-        max-width: 55%;
+        max-width: 80%;
     }
     .carousel-inner {
-    width: auto;
-    height: 70%;
+    width: 70%;
+    height: auto;
+    }
 }
+
+.toowide {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+.nav-link {
+    text-align: center;
+}
+.btn-neutral { 
+    font-weight: 1000;
 }
 
 
@@ -198,17 +229,17 @@ Colors
 
         .cd-headline {
         font-size: 2.5rem;
-        line-height: 1.2;
+        line-height: 1;
         }
         @media only screen and (min-width: 768px) {
         .cd-headline {
-            font-size: 4.4rem;
+            font-size: 4rem;
             font-weight: 300;
         }
         }
         @media only screen and (min-width: 1170px) {
         .cd-headline {
-            font-size: 6.5rem;
+            font-size: 5.5rem;
         }
         }
 
@@ -2957,7 +2988,7 @@ fieldset[disabled] .btn-link.active {
     font-size: 1.2em;
     font-weight: 500;
     border-radius: 1rem;
-    padding: 18px 30px;
+    padding: 18px 25px;
     max-width:100%;
     cursor: pointer;
 }
@@ -3012,7 +3043,6 @@ fieldset[disabled] .btn-link.active {
     background-color: rgb(69, 208, 69);
     color: white;
 }
-
 
 
 
