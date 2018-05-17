@@ -412,7 +412,7 @@
                                     
                                 </div>
                             </div>
-                            <button id="button">Click me to "donate" $10</button>
+                            <button id="donation-button">Click me to "donate" $10</button>
                         </div>
 
                     </div>
@@ -600,10 +600,10 @@
 
     <script>
         //DONATION STUFF
-        let button = document.getElementById("button");
         let bar = document.getElementById("bar");
         let progressValue = document.getElementById("progress-value");
         let progressHeader = document.getElementById("progress-header");
+        let progressButton = document.getElementById("progress-button");
         let count = 0;
         let totalRaised = 0;
         
@@ -618,7 +618,7 @@
             setDonationBar(data.amount);
         })
 
-        button.addEventListener("click",function(){
+        progressButton.addEventListener("click",function(){
             updateDonationBar(10);
             socket.emit("clientDonation", {amount: "10"});
         });
