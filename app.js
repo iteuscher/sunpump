@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 var fetch = require("node-fetch");
 
 var index = require('./routes/index');
+var about = require('./routes/about');
+var pump = require('./routes/pump');
 
 var app = express();
 var http = require('http').Server(app);
@@ -51,6 +53,8 @@ app.use(cookieParser());
 app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 app.use('/', index);
+app.use('/about', about);
+app.use('/pump', pump);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
