@@ -30,6 +30,8 @@
         <script src="./assets/js/modernizr.js"></script>
         <!-- Modernizr -->
 
+        <script src ="/socket.io/socket.io.js"></script>
+
 </head>
 
 <body class="index-page sidebar-collapse">
@@ -600,6 +602,55 @@
     <script src="https://checkout.stripe.com/checkout.js"></script>
 
     <script>
+        //DONATION STUFF
+        let button = document.getElementById("button");
+        let bar = document.getElementById("bar");
+        let count = 0;
+        let counter = document.getElementById("counter");
+        
+        var socket = io();
+        socket.on("donation", function(data){
+            console.log(data.amount);
+            updateDonationBar(data.amount);
+        })
+
+        socket.on("setAmount", function(data){
+            
+        })
+
+        button.addEventListener("click",function(){
+            updateDonationBar(10);
+            socket.emit("clientDonation", {amount: "10"});
+        });
+
+        function setDonationBar(amount){
+            console.log("SETTING AT: " + amount);
+            totalRaised = amount;
+            updateDonationBar(0);
+        }
+
+        function updateDonationBar(amount){
+            totalRaised += Number.parseFloat(amount);
+            console.log(totalRaised);
+            let currVal = totalRaised % 150;
+
+            let percent = currVal / 150.0;
+            console.log(percent);
+
+            count = totalRaised / 150;
+            console.log(count);
+            count = Math.floor(count);
+            console.log(count);
+
+        
+            counter.innerText = count + " pumps donated";
+            
+            bar.style.width = (percent * 100) + "%";
+            bar.innerText = "$" + currVal + "/150";
+        }
+
+        //END OF DONATION STUFF
+
         var handler = StripeCheckout.configure({
           key: 'pk_test_P1lN2vw2KxXgACvxWaOnpH5m',
           image: 'http://www.encaptech.com/_images/index1.jpg',
