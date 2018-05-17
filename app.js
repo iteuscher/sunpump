@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var fetch = require("node-fetch");
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var about = require('./routes/about');
+var pump = require('./routes/pump');
 
 var app = express();
 var http = require('http').Server(app);
@@ -15,8 +16,8 @@ var io = require('socket.io')(http);
 
 let totalRaised = 0;
 
-http.listen(3000, function() {
-    console.log('listening on *:3000');
+http.listen(3001, function() {
+    console.log('listening on *:3001');
  });
 
  io.on('connection', function(socket) {
@@ -42,15 +43,18 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/about', about);
+app.use('/pump', pump);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
