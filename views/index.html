@@ -405,15 +405,14 @@
                         </div>
 
                         <div class="col">
-                                <h4>30 Pumps Already Donated!</h4>
+                                <h4 id="progress-header">30 Pumps Already Donated!</h4>
                             <div class="progress">
                                 <div id="bar" class="progress-bar bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="150" style="width:0%; height: 4ex; display: flex; flex-direction: column; justify-content: center">
                                     <div id="progress-value" style="font-weight: bold; font-size: 1.5em">$0/150</div>
                                     
                                 </div>
                             </div>
-                            <button id="button">Click me</button>
-                            <div id="counter">0 Pumps Donated</div>
+                            <button id="button">Click me to "donate" $10</button>
                         </div>
 
                     </div>
@@ -604,9 +603,10 @@
         let button = document.getElementById("button");
         let bar = document.getElementById("bar");
         let progressValue = document.getElementById("progress-value");
+        let progressHeader = document.getElementById("progress-header");
         let count = 0;
-        let counter = document.getElementById("counter");
         let totalRaised = 0;
+        
 
         var socket = io();
         socket.on("donation", function(data){
@@ -643,7 +643,7 @@
             console.log(count);
 
         
-            counter.innerText = count + " pumps donated";
+            progressHeader.innerText = count + " Pumps Already Donated!";
             
             bar.style.width = (percent * 100) + "%";
             progressValue.innerText = "$" + currVal + "/150";
