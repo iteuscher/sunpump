@@ -52,7 +52,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link   btn-round btn btn-neutral" id="buy">
+                            <button class="nav-link   btn-round btn btn-neutral" id="buy1">
                                 <!-- <i class="now-ui-icons shopping_cart-simple"></i> -->
                                 <p>Buy a Pump</p>
                             </button>
@@ -185,7 +185,7 @@
                         <div class="spacer"></div>
 
                     <div class="center">
-                        <a href="buy" target="_blank" class="btn btn-lg btn-primary btn-hover">
+                        <a id="buy2" class="btn btn-lg btn-primary btn-hover">
                             Buy a Sun Pump Now!
                             <i class="now-ui-icons shopping_cart-simple"></i>
                         </a>
@@ -590,7 +590,7 @@
           }
         });
 
-        document.getElementById('buy').addEventListener('click', function(e) {
+        document.getElementById('buy1').addEventListener('click', function(e) {
           // Open Checkout with further options:
           handler.open({
             name: 'Sun Pump',
@@ -605,6 +605,23 @@
         window.addEventListener('popstate', function() {
           handler.close();
         });
+
+        document.getElementById('buy2').addEventListener('click', function(e) {
+          // Open Checkout with further options:
+          handler.open({
+            name: 'Sun Pump',
+            description: 'Solar Water Pump',
+            amount: 10000
+
+          });
+          e.preventDefault();
+        });
+
+        // Close Checkout on page navigation:
+        window.addEventListener('popstate', function() {
+          handler.close();
+        });
+
     </script>
 
 </html>
