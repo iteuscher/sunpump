@@ -4,10 +4,37 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fetch = require("node-fetch");
 
 var index = require('./routes/index');
 
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+let totalRaised = 0;
+
+http.listen(3000, function() {
+    console.log('listening on *:3000');
+ });
+
+ io.on('connection', function(socket) {
+  socket.emit("setAmount", {amount: totalRaised});
+
+  console.log('A user connected');
+
+  socket.on("clientDonation", function(data){
+      console.log("Client donated $" + data.amount);
+      totalRaised += (Number.parseFloat(data.amount));
+      socket.broadcast.emit("donation",data);
+  })
+
+  //Whenever someone disconnects this piece of code executed
+  socket.on('disconnect', function () {
+      console.log('A user disconnected');
+  });
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

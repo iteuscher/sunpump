@@ -27,6 +27,8 @@
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />
 
+        <script src ="/socket.io/socket.io.js"></script>
+
 </head>
 
 <body class="index-page sidebar-collapse">
@@ -401,6 +403,18 @@
                                 allowpaymentrequest></iframe>
 
                         </div>
+
+                        <div class="col">
+                                <h4>30 Pumps Already Donated!</h4>
+                            <div class="progress">
+                                <div id="bar" class="progress-bar bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="150" style="width:20%; height: 4ex; display: flex; flex-direction: column; justify-content: center">
+                                    <div style="font-weight: bold">$30/150</div>
+                                    
+                                </div>
+                                
+                              </div>
+                        </div>
+
                     </div>
 
 
@@ -585,6 +599,55 @@
     <script src="https://checkout.stripe.com/checkout.js"></script>
 
     <script>
+        //DONATION STUFF
+        let button = document.getElementById("button");
+        let bar = document.getElementById("bar");
+        let count = 0;
+        let counter = document.getElementById("counter");
+        
+        var socket = io();
+        socket.on("donation", function(data){
+            console.log(data.amount);
+            updateDonationBar(data.amount);
+        })
+
+        socket.on("setAmount", function(data){
+            
+        })
+
+        button.addEventListener("click",function(){
+            updateDonationBar(10);
+            socket.emit("clientDonation", {amount: "10"});
+        });
+
+        function setDonationBar(amount){
+            console.log("SETTING AT: " + amount);
+            totalRaised = amount;
+            updateDonationBar(0);
+        }
+
+        function updateDonationBar(amount){
+            totalRaised += Number.parseFloat(amount);
+            console.log(totalRaised);
+            let currVal = totalRaised % 150;
+
+            let percent = currVal / 150.0;
+            console.log(percent);
+
+            count = totalRaised / 150;
+            console.log(count);
+            count = Math.floor(count);
+            console.log(count);
+
+        
+            counter.innerText = count + " pumps donated";
+            
+            bar.style.width = (percent * 100) + "%";
+            bar.innerText = "$" + currVal + "/150";
+        }
+
+        //END OF DONATION STUFF
+
         var handler = StripeCheckout.configure({
           key: 'pk_test_P1lN2vw2KxXgACvxWaOnpH5m',
           image: 'http://www.encaptech.com/_images/index1.jpg',
