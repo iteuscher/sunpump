@@ -409,7 +409,14 @@
                                     <div id="progress-value" style="font-weight: bold; font-size: 1.5em">$0/150</div>
                                 </div>
                             </div>
+                            <input id="tempNameInput" type="text" placeholder="name">
                             <button id="progress-button">Click me to "donate" $10</button>
+
+                            <div id="messageArea">
+                                <ul id="messages" style="overflow:scroll; height: 20em">
+                                </ul>
+                            </div>
+
                         </div>
 
                     </div>
@@ -603,14 +610,17 @@
         let progressValue = document.getElementById("progress-value");
         let progressHeader = document.getElementById("progress-header");
         let progressButton = document.getElementById("progress-button");
+        let tempNameInput = document.getElementById("tempNameInput");
+        let messageList = document.getElementById("messages");
         let count = 0;
         let totalRaised = 0;
         
 
         var socket = io();
         socket.on("donation", function(data){
-            console.log(data.amount);
+            console.log(data.name + " donated $" + data.amount);
             updateDonationBar(data.amount);
+            addDonationToList(data.name, data.amount);
         })
 
         socket.on("setAmount", function(data){
@@ -618,8 +628,16 @@
         })
 
         progressButton.addEventListener("click",function(){
-            updateDonationBar(10);
-            socket.emit("clientDonation", {amount: "10"});
+            let amount = 10;
+            updateDonationBar(amount);
+            let tempName = tempNameInput.value;
+            if(tempName.length == 0){
+                tempName = "Anonymous";
+            }
+
+            addDonationToList(tempName, amount);
+
+            socket.emit("clientDonation", {name: tempName, amount: amount});
         });
 
         function setDonationBar(amount){
@@ -646,6 +664,13 @@
             
             bar.style.width = (percent * 100) + "%";
             progressValue.innerText = "$" + currVal + "/150";
+        }
+
+        function addDonationToList(name, amount){
+            let tempListElement = document.createElement("li");
+            tempListElement.innerText = name + " donated $" + amount + "!";
+            messageList.appendChild(tempListElement);
+            messageList.scrollTop = messageList.scrollHeight;
         }
 
         //END OF DONATION STUFF
