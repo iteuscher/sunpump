@@ -37,6 +37,20 @@ Colors
 ::selection{
 } */
 
+.bannerItem {
+
+}
+
+
+
+#bannerContainer {
+    display: flex;
+}
+
+.bannerDiv {
+    display: flex;
+}
+
 .spacer-small {
     height: 2ex;
 }
