@@ -67,7 +67,44 @@ p {
 }
 
 .image-half {
+    width: 75%;
+}
+@media only screen and (min-width: 638px) {
+    .image-half {
     width: 50%;
+    }
+}
+@media only screen and (min-width: 1100px) {
+    .image-half {
+    width: 40%;
+    }
+}
+
+.donation-bar{
+    width:0%;
+    height: 4ex; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center
+}
+
+#messageArea {
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+#messages {
+    overflow: scroll; 
+    height: 20em;
+    list-style: none;
+    text-align: center !important;
+}
+
+#messages li {
+    margin: 0 auto;
+    padding-top: 0.25em;
+    padding-left: 0.2em;
 }
 
 .header {
@@ -115,14 +152,10 @@ p {
     }
 }
 
-ul li {
-    font-size: 2.1ex;
-    line-height: 2.5ex;
-}
 
 .list li {
-    font-size: 2.5ex;
-    margin-bottom: 1.8ex;
+    font-size: 2.3em;
+    margin-bottom: 1.8em;
     text-align: left;
     position: relative;
 }
@@ -150,14 +183,15 @@ ul li {
     padding-left: 3ex;
 }
 .list-less-padding li {
-    font-size: 2.5ex;
+    font-size: 1.35em;
     margin-bottom: 1.8ex;
     text-align: left;
     position: relative;
 }
 
 .nav-logo {
-    height: 25px;
+    height: 1.8rem;
+    width: auto;
     left: 0;
     padding: 0;
     margin: 0;
@@ -167,16 +201,10 @@ ul li {
     .list {
         padding-left: 15ex;
     }
-    .nav-logo {
-    height: 35px;
-    }
 }
 @media only screen and (min-width: 1170px) {
     .list {
         padding-left: 35ex;
-    }
-    .nav-logo {
-    height: 40px;
     }
 }
 
@@ -212,16 +240,27 @@ ul li {
     list-style-type:none;
     padding-top: 3ex;
     padding-bottom: 2ex;
+    padding-left: 0;
+    margin: 0 auto;
 }
-
-.banner-list li {
-    font-size: 3.2ex;
-    margin-bottom: 1.8ex;
+    .banner-list li {
+    font-size: 1.7rem;
     text-align: center;
     position: relative;
-    padding-left: 1.5ex;
-    padding-right: 1.5ex;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 1.8ex;
+    }      
+
+@media only screen and (min-width: 500px) {
+    .banner-list li {
+        width: initial;
+        margin: initial;
+        margin-bottom: 1.8ex;
+    }
 }
+
 .banner-list li i {
     width: 20%;
     padding-bottom: 7px;
@@ -4448,8 +4487,8 @@ body {
 }
 
 .navbar {
-    padding-top: 0.625rem;
-    padding-bottom: 0.625rem;
+    /* padding-top: 0.625rem;
+    padding-bottom: 0.625rem; */
     min-height: 53px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
@@ -4480,6 +4519,7 @@ body {
 
 .navbar .navbar-nav .nav-link.btn {
     padding: 11px 22px;
+    font-size: 0.9rem !important;
 }
 
 .navbar .navbar-nav .nav-link.btn.btn-lg {
@@ -4491,8 +4531,8 @@ body {
 }
 
 .navbar .navbar-nav .nav-link:not(.btn) {
-    text-transform: uppercase;
-    font-size: 0.75em;
+    /* text-transform: uppercase; */
+    font-size: 0.9rem !important;
     padding: 0.5rem 0.7rem;
     line-height: 1.625rem;
 }
