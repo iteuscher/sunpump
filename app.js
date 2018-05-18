@@ -26,7 +26,7 @@ http.listen(3001, function() {
   console.log('A user connected');
 
   socket.on("clientDonation", function(data){
-      console.log("Client donated $" + data.amount);
+      console.log(data.name + " donated $" + data.amount);
       totalRaised += (Number.parseFloat(data.amount));
       socket.broadcast.emit("donation",data);
   })

@@ -371,13 +371,23 @@
                         <div class="col">
                                 <h4>30 Pumps Already Donated!</h4>
                             <div class="progress">
-                                <div id="bar" class="progress-bar bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="150" style="width:20%; height: 4ex; display: flex; flex-direction: column; justify-content: center">
-                                    <div style="font-weight: bold">$30/150</div>
-                                    
+                                <div id="bar" class="progress-bar bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="150" style="width:0%; height: 4ex; display: flex; flex-direction: column; justify-content: center">
+                                    <div id="progress-value" style="font-weight: bold; font-size: 1.5em">$0/150</div>
                                 </div>
                                 
                             </div>
+<<<<<<< HEAD
                             <button id="progress-button">Click me to "donate" $10</button>
+=======
+                            <input id="tempNameInput" type="text" placeholder="name">
+                            <button id="progress-button">Click me to "donate" $10</button>
+
+                            <div id="messageArea">
+                                <ul id="messages" style="overflow:scroll; height: 20em">
+                                </ul>
+                            </div>
+
+>>>>>>> 3a30ead8c12362aa8ec88c2313407612c0b91521
                         </div>
 
                     </div>
@@ -684,22 +694,36 @@
     //DONATION STUFF
         let button = document.getElementById("button");
         let bar = document.getElementById("bar");
+        let progressValue = document.getElementById("progress-value");
+        let progressHeader = document.getElementById("progress-header");
+        let progressButton = document.getElementById("progress-button");
+        let tempNameInput = document.getElementById("tempNameInput");
+        let messageList = document.getElementById("messages");
         let count = 0;
         let counter = document.getElementById("counter");
         
         var socket = io();
         socket.on("donation", function(data){
-            console.log(data.amount);
+            console.log(data.name + " donated $" + data.amount);
             updateDonationBar(data.amount);
+            addDonationToList(data.name, data.amount);
         })
 
         socket.on("setAmount", function(data){
             
         })
 
-        button.addEventListener("click",function(){
-            updateDonationBar(10);
-            socket.emit("clientDonation", {amount: "10"});
+        progressButton.addEventListener("click",function(){
+            let amount = 10;
+            updateDonationBar(amount);
+            let tempName = tempNameInput.value;
+            if(tempName.length == 0){
+                tempName = "Anonymous";
+            }
+
+            addDonationToList(tempName, amount);
+
+            socket.emit("clientDonation", {name: tempName, amount: amount});
         });
 
         function setDonationBar(amount){
@@ -728,7 +752,63 @@
             bar.innerText = "$" + currVal + "/150";
         }
 
-        
+        function addDonationToList(name, amount){
+            let tempListElement = document.createElement("li");
+            tempListElement.innerText = name + " donated $" + amount + "!";
+            messageList.appendChild(tempListElement);
+            messageList.scrollTop = messageList.scrollHeight;
+        }
+
+        //END OF DONATION STUFF
+     </script>
+
+    <script>
+        //Stripe checkout to buy a pump
+
+        var handler = StripeCheckout.configure({
+          key: 'pk_test_P1lN2vw2KxXgACvxWaOnpH5m',
+          image: 'http://www.encaptech.com/_images/index1.jpg',
+          locale: 'auto',
+          shippingAddress: "true",
+          zipCode: "true",
+          token: function(token) {
+            // You can access the token ID with `token.id`.
+            // Get the token ID to your server-side code for use.
+          }
+        });
+
+        document.getElementById('buy1').addEventListener('click', function(e) {
+          // Open Checkout with further options:
+          handler.open({
+            name: 'Sun Pump',
+            description: 'Solar Water Pump',
+            amount: 10000
+
+          });
+          e.preventDefault();
+        });
+
+        // Close Checkout on page navigation:
+        window.addEventListener('popstate', function() {
+          handler.close();
+        });
+
+        document.getElementById('buy2').addEventListener('click', function(e) {
+          // Open Checkout with further options:
+          handler.open({
+            name: 'Sun Pump',
+            description: 'Solar Water Pump',
+            amount: 10000
+
+          });
+          e.preventDefault();
+        });
+
+        // Close Checkout on page navigation:
+        window.addEventListener('popstate', function() {
+          handler.close();
+        });
+
     </script>
      <!--END OF DONATION STUFF-->
 
