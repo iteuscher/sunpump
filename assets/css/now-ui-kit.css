@@ -33,8 +33,9 @@ Colors
 ===============================
 */
 
+/* 
 ::selection{
-}
+} */
 
 .spacer-small {
     height: 2ex;
@@ -63,6 +64,10 @@ Colors
 
 p {
     font-size: 16px;
+}
+
+.image-half {
+    width: 50%;
 }
 
 .header {
@@ -112,7 +117,7 @@ p {
 
 ul li {
     font-size: 2.1ex;
-    line-height: 3.5ex;
+    line-height: 2.5ex;
 }
 
 .list li {
@@ -122,7 +127,6 @@ ul li {
     position: relative;
 }
 
-
 .list {
     padding-top: 0;
     padding-bottom: 2ex;
@@ -131,15 +135,48 @@ ul li {
     max-width: 95%;
     padding-left: 3ex;
 }
+.flush-left{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.list-less-padding{
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 2ex;
+    list-style-position: inside;
+    margin: 0 auto;
+    max-width: 100%;
+    padding-left: 3ex;
+}
+.list-less-padding li {
+    font-size: 2.5ex;
+    margin-bottom: 1.8ex;
+    text-align: left;
+    position: relative;
+}
+
+.nav-logo {
+    width: 35px;
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
 
 @media only screen and (min-width: 768px) {
     .list {
         padding-left: 15ex;
     }
+    .nav-logo {
+    width: 40px;
+    }
 }
 @media only screen and (min-width: 1170px) {
     .list {
         padding-left: 35ex;
+    }
+    .nav-logo {
+    width: 50px;
     }
 }
 
@@ -149,6 +186,45 @@ ul li {
 
 .flush-header {
     margin-bottom: 5px;
+}
+
+.banner {
+        /* https://uigradients.com/#BlueSkies */
+    background: #55acee;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #55acee, #56CCF2); 
+    background: linear-gradient(to right, #55acee, #56CCF2);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    z-index: -1;
+    color: white;
+    margin: 0 auto;
+}
+
+.banner-list {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    list-style-type:none;
+    padding-top: 3ex;
+    padding-bottom: 2ex;
+}
+
+.banner-list li {
+    font-size: 3.2ex;
+    margin-bottom: 1.8ex;
+    text-align: center;
+    position: relative;
+    padding-left: 1.5ex;
+    padding-right: 1.5ex;
+}
+.banner-list li i {
+    width: 20%;
+    padding-bottom: 7px;
 }
 
 .email
@@ -2141,8 +2217,8 @@ ul li {
 .navbar .navbar-nav>a.btn {
     border-width: 2px;
     font-weight: 400;
-    font-size: 0.8571em;
-    line-height: 1.35em;
+    font-size: 0.8em;
+    line-height: 1.25em;
     margin: 5px 1px;
     border: none;
     border-radius: 0.1875rem;
@@ -2919,7 +2995,9 @@ fieldset[disabled] .btn-neutral.active {
 .btn-round {
     border-width: 1px;
     border-radius: 30px !important;
-    padding: 11px 23px;
+    padding: 11px 22px;
+    margin: 10px;
+    color: #55acee !important;
 }
 
 .btn-round.btn-simple {
@@ -2991,6 +3069,8 @@ fieldset[disabled] .btn-link.active {
     padding: 18px 25px;
     max-width:100%;
     cursor: pointer;
+    color: white !important;
+    /* transition: 0.s; */
 }
 @media (min-width: 400px)
 {
@@ -3041,7 +3121,7 @@ fieldset[disabled] .btn-link.active {
 
 .btn-hover:hover {
     background-color: rgb(69, 208, 69);
-    color: white;
+    color: white !important;
 }
 
 
@@ -4368,8 +4448,8 @@ body {
 }
 
 .navbar {
-    padding-top: 0.625rem;
-    padding-bottom: 0.625rem;
+    /* padding-top: 0.625rem;
+    padding-bottom: 0.625rem; */
     min-height: 53px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
@@ -4412,7 +4492,7 @@ body {
 
 .navbar .navbar-nav .nav-link:not(.btn) {
     text-transform: uppercase;
-    font-size: 0.7142em;
+    font-size: 0.75em;
     padding: 0.5rem 0.7rem;
     line-height: 1.625rem;
 }
@@ -5955,7 +6035,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .index-page .page-header {
-    height: 125vh;
+    height: 110vh;
 }
 
 .index-page .page-header .container>.content-center {
@@ -6836,7 +6916,7 @@ Created using IcoMoon - icomoon.io
     }
     .sidebar-collapse .navbar-collapse:before {
         background: #55acee;
-        opacity: 0.9;
+        /* opacity: 0.9; */
         filter: alpha(opacity=90);
         display: block;
         content: "";
@@ -6847,9 +6927,13 @@ Created using IcoMoon - icomoon.io
         left: 0;
         z-index: -1;
     }
+    .sidebar-collapse .navbar-collapse .navbar-nav .nav-link button{
+        margin: 0 auto;
+        width: 100%;
+    }
     .sidebar-collapse .navbar-collapse .navbar-nav:not(.navbar-logo) .nav-link {
-        margin: 0 1rem;
-        margin-top: 0.3125rem;
+        margin: 0 1.8rem;
+        margin-top: 0.37rem;
     }
     .sidebar-collapse .navbar-collapse .navbar-nav:not(.navbar-logo) .nav-link:not(.btn) {
         color: #FFFFFF;
@@ -8243,6 +8327,67 @@ Created using IcoMoon - icomoon.io
         margin-left: 0;
         margin-bottom: 30px;
     }
+}
+
+/* fix so menu fits on small screens */
+@media screen and (max-width: 370px) {
+    .sidebar-collapse .navbar-collapse {
+        width: 250px;
+        -webkit-transform: translate3d(250px, 0, 0);
+        -moz-transform: translate3d(250px, 0, 0);
+        -o-transform: translate3d(250px, 0, 0);
+        -ms-transform: translate3d(250px, 0, 0);
+        transform: translate3d(250px, 0, 0);
+    }
+    .sidebar-collapse [class*="navbar-expand-"] .navbar-collapse {
+        width: 250px;
+    }
+        .sidebar-collapse #bodyClick {
+        right: 250px;
+        }
+        .sidebar-collapse.menu-on-left .navbar-collapse {
+        right: auto;
+        left: 0;
+        -webkit-transform: translate3d(-250px, 0, 0);
+        -moz-transform: translate3d(-250px, 0, 0);
+        -o-transform: translate3d(-250px, 0, 0);
+        -ms-transform: translate3d(-250px, 0, 0);
+        transform: translate3d(-250px, 0, 0);
+    }
+    .nav-open .sidebar-collapse .wrapper {
+        -webkit-transform: translate3d(-125px, 0, 0);
+        -moz-transform: translate3d(-125px, 0, 0);
+        -o-transform: translate3d(-125px, 0, 0);
+        -ms-transform: translate3d(-125px, 0, 0);
+        transform: translate3d(-125px, 0, 0);
+    }
+    .nav-open .sidebar-collapse .navbar-translate {
+        -webkit-transform: translate3d(-250px, 0, 0);
+        -moz-transform: translate3d(-250px, 0, 0);
+        -o-transform: translate3d(-250px, 0, 0);
+        -ms-transform: translate3d(-250px, 0, 0);
+        transform: translate3d(-250px, 0, 0);
+    }
+    .nav-open .sidebar-collapse.menu-on-left .navbar-translate {
+        -webkit-transform: translate3d(250px, 0, 0);
+        -moz-transform: translate3d(250px, 0, 0);
+        -o-transform: translate3d(250px, 0, 0);
+        -ms-transform: translate3d(250px, 0, 0);
+        transform: translate3d(250px, 0, 0);
+    }
+    .nav-open .sidebar-collapse.menu-on-left .wrapper {
+        -webkit-transform: translate3d(125px, 0, 0);
+        -moz-transform: translate3d(125px, 0, 0);
+        -o-transform: translate3d(125px, 0, 0);
+        -ms-transform: translate3d(125px, 0, 0);
+        transform: translate3d(125px, 0, 0);
+    }
+    .nav-open .sidebar-collapse.menu-on-left #bodyClick {
+        right: auto;
+        left: 250px;
+    }
+
+
 }
 
 @media screen and (max-width: 576px) {
