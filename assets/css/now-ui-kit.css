@@ -157,7 +157,7 @@ ul li {
 }
 
 .nav-logo {
-    width: 35px;
+    height: 25px;
     left: 0;
     padding: 0;
     margin: 0;
@@ -168,7 +168,7 @@ ul li {
         padding-left: 15ex;
     }
     .nav-logo {
-    width: 40px;
+    height: 35px;
     }
 }
 @media only screen and (min-width: 1170px) {
@@ -176,7 +176,7 @@ ul li {
         padding-left: 35ex;
     }
     .nav-logo {
-    width: 50px;
+    height: 40px;
     }
 }
 
@@ -4448,8 +4448,8 @@ body {
 }
 
 .navbar {
-    /* padding-top: 0.625rem;
-    padding-bottom: 0.625rem; */
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
     min-height: 53px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
