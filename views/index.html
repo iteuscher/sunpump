@@ -439,7 +439,7 @@
                         </div>
 
                         <div class="col">
-                                <h4>30 Pumps Already Donated!</h4>
+                                <h4 id="counter">0 Pumps Already Donated!</h4>
                             <div class="progress">
                                 <div id="bar" class="progress-bar bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="150" style="width:0%; height: 4ex; display: flex; flex-direction: column; justify-content: center">
                                     <div id="progress-value" style="font-weight: bold; font-size: 1.5em">$0/150</div>
@@ -449,7 +449,7 @@
                             <input id="tempNameInput" type="text" placeholder="name">
                             <button id="progress-button">Click me to "donate" $10</button>
 
-                            <div id="messageArea">
+                            <div id="messageArea" style="background-color: #e9ecef">
                                 <ul id="messages" style="overflow:scroll; height: 20em">
                                 </ul>
                             </div>
@@ -703,10 +703,12 @@
         let progressHeader = document.getElementById("progress-header");
         let progressButton = document.getElementById("progress-button");
         let tempNameInput = document.getElementById("tempNameInput");
+        let messageArea = document.getElementById("messageArea");
         let messageList = document.getElementById("messages");
-        let count = 0;
         let counter = document.getElementById("counter");
         
+        let totalRaised = 0;
+        let count = 0;
         var socket = io();
         socket.on("donation", function(data){
             console.log(data.name + " donated $" + data.amount);
@@ -754,7 +756,7 @@
             counter.innerText = count + " pumps donated";
             
             bar.style.width = (percent * 100) + "%";
-            bar.innerText = "$" + currVal + "/150";
+            progressValue.innerText = "$" + currVal + "/150";
         }
 
         function addDonationToList(name, amount){
