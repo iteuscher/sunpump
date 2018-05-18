@@ -746,8 +746,13 @@
                 count = Math.floor(count);
                 console.log(count);
     
-            
-                counter.innerText = count + " Pumps Already Donated!";
+                if(count == 1){
+                    counter.innerText = count + " Pump Already Donated!";
+                }
+                else{
+                    counter.innerText = count + " Pumps Already Donated!";
+                }
+                
                 
                 bar.style.width = (percent * 100) + "%";
                 progressValue.innerText = "$" + currVal + "/150";
