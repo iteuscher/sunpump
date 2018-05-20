@@ -9,10 +9,13 @@ var fetch = require("node-fetch");
 var index = require('./routes/index');
 var about = require('./routes/about');
 var pump = require('./routes/pump');
+var donate = require('./routes/donate');
 
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+
+const nodemailer = require('nodemailer');
 
 let totalRaised = 0;
 
@@ -46,7 +49,7 @@ app.set('view engine', 'pug');
 app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // app.use(express.static(path.join(__dirname, 'public')));
@@ -55,6 +58,37 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')))
 app.use('/', index);
 app.use('/about', about);
 app.use('/pump', pump);
+app.use('/donate', donate);
+
+
+// POST route from contact form
+app.post('/contact', function (req, res) {
+  let mailOpts, smtpTrans;
+  smtpTrans = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: GMAIL_USER,
+      pass: GMAIL_PASS
+    }
+  });
+  mailOpts = {
+    from: req.body.name + ' &lt;' + req.body.email + '&gt;',
+    to: GMAIL_USER,
+    subject: 'New message from Sun Pump contact form',
+    text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+  };
+  smtpTrans.sendMail(mailOpts, function (error, response) {
+    if (error) {
+      res.render('contact-failure');
+    }
+    else {
+      res.render('contact-success');
+    }
+  });
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

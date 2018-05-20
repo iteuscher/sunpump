@@ -38,16 +38,14 @@ Colors
 } */
 
 .bannerItem {
-
+font-size: 1.5em; 
+padding-bottom: 1.5em;
+width:50%;
 }
 
-
-
-#bannerContainer {
-    display: flex;
-}
-
-.bannerDiv {
+.bannerContainer{
+    list-style: none;
+    padding-left:0;
     display: flex;
 }
 
@@ -83,15 +81,35 @@ p {
 .image-half {
     width: 75%;
 }
+.image-quarter {
+    width: 50%;
+}
+.image-full {
+    width: 85%;
+}
+
 @media only screen and (min-width: 638px) {
     .image-half {
     width: 50%;
     }
+    .image-quarter {
+    width: 30%;
+    }
+    .image-full {
+    width: 65%;
+}
 }
 @media only screen and (min-width: 1100px) {
     .image-half {
     width: 40%;
     }
+    .image-quarter {
+    width: 20%;
+    }
+    .image-full {
+    width: 50%;
+}
+
 }
 
 .donation-bar{
@@ -197,7 +215,7 @@ p {
     padding-left: 3ex;
 }
 .list-less-padding li {
-    font-size: 1.35em;
+    font-size: 1.6em;
     margin-bottom: 1.8ex;
     text-align: left;
     position: relative;
@@ -229,6 +247,86 @@ p {
 .flush-header {
     margin-bottom: 5px;
 }
+
+
+
+/* bubble stat from water.org */
+            
+        .bubble-stat {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10em;
+            height: 10em;
+            /* background: rgba( 135,206,250,0.93); */
+            background: #55acee;
+            opacity: 0.94;
+
+            border-radius: 50%;
+            background-size: contain;
+            position: absolute;
+            top: 25%;
+            left: 58%;
+            /* transform: translate(-50%, -50%); */
+        }
+        @media screen and (min-width: 1020px)
+        {
+            .bubble-stat {
+                width: 12em;
+                height: 12em;
+            }
+        }
+
+
+        .bubble-stat{
+            font-size: 0.9rem;
+            padding: 0.7rem;
+        }
+
+        @media screen and (min-width: 668px)
+        {
+            .bubble-stat{
+                 font-size: 0.9rem;
+            }
+
+        }
+        .bubble-stat__content {
+            max-width: 100%;
+            padding: 8%;
+            color: #fff;
+            text-align: center;
+        }
+        .bubble-stat__number {
+            display: block;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #fff;
+            /* font-family: univers49; */
+            font-size: 1.8rem;
+            line-height: 1em;
+        }
+        @media screen and (min-width: 1020px)
+        {
+            .bubble-stat__number+.bubble-stat__text {
+                margin-top: 5px;
+            }
+            .bubble-stat__number+.bubble-stat__text {
+                margin-top: 1px;
+            }
+        }
+        @media screen and (min-width: 1020px)
+        {
+            .bubble-stat__text {
+                font-size: 1rem;
+            }
+            .bubble-stat__text {
+                font-size: 1.2rem;
+                
+            }
+        }
+
+
+
+
 
 .banner {
         /* https://uigradients.com/#BlueSkies */
@@ -4170,6 +4268,10 @@ p.description {
     margin: 0 auto;
 }
 
+.blockquote-white {
+    border: 1px solid white;
+}
+
 @media (min-width: 900px) {
     .blockquote {
         max-width: 70%;
@@ -4630,7 +4732,7 @@ body {
     background-color: transparent !important;
     box-shadow: none;
     color: #FFFFFF;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item) {
