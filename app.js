@@ -69,13 +69,13 @@ app.post('/contact', function (req, res) {
     port: 465,
     secure: true,
     auth: {
-      user: GMAIL_USER,
-      pass: GMAIL_PASS
+      user: 'sunpumptest1@gmail.com',
+      pass: 'temp_email_pass_1'
     }
   });
   mailOpts = {
     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-    to: GMAIL_USER,
+    to: 'sunpumptest1@gmail.com',
     subject: 'New message from Sun Pump contact form',
     text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
   };

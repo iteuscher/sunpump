@@ -87,6 +87,9 @@ p {
 .image-full {
     width: 85%;
 }
+.image-big {
+    width: 100%;
+}
 
 @media only screen and (min-width: 638px) {
     .image-half {
@@ -98,6 +101,10 @@ p {
     .image-full {
     width: 65%;
 }
+.image-big {
+    width: 95%;
+}
+
 }
 @media only screen and (min-width: 1100px) {
     .image-half {
@@ -107,8 +114,12 @@ p {
     width: 20%;
     }
     .image-full {
-    width: 50%;
-}
+        width: 50%;
+    }
+    .image-big {
+        width: 60%;
+    }
+
 
 }
 
@@ -248,6 +259,21 @@ p {
     margin-bottom: 5px;
 }
 
+/* .vertical-center
+{
+    vertical-align: middle;
+    white-space: nowrap;
+    display: inline-block;
+} */
+
+.vertical-center {
+    max-height: 250px;
+    line-height: 250px;
+}
+
+.vertical-center .vertical-center-img {
+    vertical-align: middle;
+}
 
 
 /* bubble stat from water.org */
