@@ -274,7 +274,7 @@
             <div id="buy" class="section section-basic">
                 <div class="container center">
                     <div class="center">
-                        <a id="buy2" class="btn btn-lg btn-primary btn-hover">
+                        <a id="buy" class="btn btn-lg btn-primary btn-hover">
                             Buy a Pump Now!
                             <i class="now-ui-icons shopping_cart-simple"></i>
                         </a>
@@ -599,7 +599,7 @@
             }
         });
 
-        document.getElementById('buy1').addEventListener('click', function (e) {
+        document.getElementById('buy').addEventListener('click', function (e) {
             // Open Checkout with further options:
             handler.open({
                 name: 'Sun Pump',
@@ -615,6 +615,7 @@
             handler.close();
         });
 
+        /*
         document.getElementById('buy2').addEventListener('click', function (e) {
             // Open Checkout with further options:
             handler.open({
@@ -630,6 +631,7 @@
         window.addEventListener('popstate', function () {
             handler.close();
         });
+        */
 
     </script>
 
