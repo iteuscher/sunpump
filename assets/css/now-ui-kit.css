@@ -87,6 +87,12 @@ p {
 .image-full {
     width: 85%;
 }
+.image-bigger {
+    width: 92%;
+}
+.image-big {
+    width: 100%;
+}
 
 @media only screen and (min-width: 638px) {
     .image-half {
@@ -98,6 +104,13 @@ p {
     .image-full {
     width: 65%;
 }
+.image-bigger {
+    width: 80%;
+}
+.image-big {
+    width: 95%;
+}
+
 }
 @media only screen and (min-width: 1100px) {
     .image-half {
@@ -107,10 +120,86 @@ p {
     width: 20%;
     }
     .image-full {
-    width: 50%;
+        width: 50%;
+    }
+    .image-bigger {
+    width: 75%;
+}
+    .image-big {
+        width: 92%;
+    }
 }
 
+.africa-map {
+    max-width: 620px;
+    max-height: 700px;
+    overflow: scroll !important;
 }
+
+.africa-map path:hover {
+fill: #aeaeae;
+}
+
+.map-legend {
+  background: #FFF;
+  padding: 0px;
+  line-height: 16px;
+  margin: 14px;
+  font-size: 16px;
+  font-family: Arial, sans-serif; 
+  overflow: hidden; 
+  text-align: left; 
+  color: rgb(86, 86, 86); 
+  /* font-family: Roboto,Arial,sans-serif;  */
+  -moz-user-select: none; 
+  user-select: none; 
+  background-color: rgb(255, 255, 255); 
+  padding: 8px; 
+  border-radius: 2px; 
+  /* background-clip: padding-box;  */
+  box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); 
+  border-left: 0px none;
+}
+
+.map-legend p{
+  margin: 0 !important;
+}
+
+.map-legend-headline{
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align:center;
+}
+
+.map-legend-color {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+  float: left;
+  border-radius: 15px;
+}
+
+.ts-map-legend-color-red {
+  background: #f14b3e;
+}
+
+.ts-map-legend-color-orange {
+  background: #f18c3e;
+}
+
+.ts-map-legend-color-yellow {
+  background: #f5c155;
+}
+
+.ts-map-legend-color-blue {
+  background: blue;
+}
+
+.ts-map-legend-color-green {
+  background: green;
+}
+
+
 
 .donation-bar{
     width:0%;
@@ -248,6 +337,26 @@ p {
     margin-bottom: 5px;
 }
 
+/* .vertical-center
+{
+    vertical-align: middle;
+    white-space: nowrap;
+    display: inline-block;
+} */
+
+.vertical-center {
+    height: 65px;
+    line-height: 250px;
+}
+
+.vertical-center .vertical-center-img {
+    vertical-align: middle;
+}
+
+.images-w-text {
+    background: green;
+    min-height: 20px;
+}
 
 
 /* bubble stat from water.org */
