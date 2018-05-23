@@ -73,7 +73,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-round btn btn-neutral btn-hover" href="./donate.html">
+                            <a class="nav-link btn-round btn btn-neutral btn-hover" href="./donate">
 
                                 <p>To Donate Page</p>
                             </a>
@@ -181,7 +181,7 @@
                             <div class="spacer-small"></div>
 
                             <div class="center">
-                                <a href="./pump.html" class="arrow-button btn-arrow btn-border">
+                                <a href="./pump" class="arrow-button btn-arrow btn-border">
                                     <span>More Pump Info
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                             viewBox="0 0 36.1 25.8" enable-background="new 0 0 36.1 25.8" xml:space="preserve">
@@ -257,17 +257,38 @@
 
                         <ul class="bannerContainer ">
                             <li class="bannerItem ">
-                                <img class="image-full" id="farmingImage" src="../assets/img/farming.jpeg">
+                                <img class="image-big" id="farmingImage" src="../assets/img/farming.jpeg">
                                 <div>Farming & Irrigation</div>
                             </li>
                             <li class="bannerItem ">
-                                <img class="image-full" id="troughImage" src="../assets/img/trough.jpeg">
+                                <img class="image-big" id="troughImage" src="../assets/img/trough.jpeg">
                                 <div>Livestock Watering</div>
                             </li>
                         </ul>
+
+
                 </div>
 
                 <div class="spacer"></div>
+
+
+            <div class="container-fluid images-w-text">
+                <div class="row">
+                    <div class="col-lg-6">
+                        Grow 2 crop cycles / year-round / even in the dry season 
+                    </div>
+                    <div class="col-lg-6">
+                        High value crops *tomatoes image*
+                    </div>
+                    <div class="col-lg-6">
+                        promote financial security // protection from drought, climate change, etc
+                    </div>
+                    <div class="col-lg-6">
+                        boost buisness, reduce povery
+                    </div>
+                </div>
+
+            </div>
 
 
 
@@ -293,26 +314,91 @@
                     <h2>Our Partners</h2>
 
 
-                    <div class="row center">
-                        <div class="col-sm">
-                            <div class="vertical-center">
-                                <img class="img-full vertical-center-img" src="../assets/img/encaplogo.png" alt="Encap Tech Logo">
-                            </div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <!-- Javascript-friendly map of Africa using the Raphael.js library.
+                                by Bryan Braun http://bryanbraun.com 
+                                http://bryanbraun.github.com/africa-map-raphael/ -->
+                            <div id="africa-map" class="africa-map"> </div>
+                            <script src="../assets/js/africa-map/raphael-min.js"></script>
+                            <script src="../assets/js/africa-map/africa-paths.js"></script>
+                            <script>
+                                window.onload = function () {
+                                    // Create canvas and define attributes shared by all paths.
+                                    var R = Raphael("africa-map", 620, 690),
+                                        attr = {
+                                            "fill": "#b9b9b9",
+                                            "stroke": "#fff",
+                                            "stroke-miterlimit": "4",
+                                            "stroke-width": "1",
+                                            "transform": "s0.06,0.06,60,0" // Scales the path to a useful size.
+                                        };
+                                    // Define map object. 
+                                    var africaMap = {};
+                                    for (var nation in africaPaths) {
+                                        // Draw a path, then apply attributes to it.
+                                        africaMap[nation] = R.path(africaPaths[nation]).attr(attr);
+                                        // Name the internal Raphael id after the africaPaths property name.
+                                        africaMap[nation].id = nation;
+                                        // Name the element id after the africaPaths property name.
+                                        africaMap[nation].node.id = nation;
+                                    }
+                                    // For an example of interaction via Raphael, uncomment the line below.
+                                    // var demo1 = R.getById('tanzania').attr({"fill": "green"});
+                                    // For an example of interaction via javascript, uncomment the line below.
+                                    var demo2 = document.getElementById('kenya'); demo2.style.fill = "green";
+                                    var demo3 = document.getElementById('malawi'); demo3.style.fill = "blue";
+                                    var demo4 = document.getElementById('uganda'); demo4.style.fill = "blue";
+                                    // demo2.tooltip();
+                                };
+                            </script>
                         </div>
-                        <div class="col-sm">
-                            <div class="vertical-center">
-                                <img class="img-full vertical-center-img" src="../assets/img/globalgoodlogo.png" alt="Global Good Logo">
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="vertical-center">
-                                <img class="img-full vertical-center-img" src="../assets/img/kickstartlogo.png" alt="Kickstart Logo">
+                        <div class="col-lg-3">
+
+                            <div class="map-legend" style="z-index: 0; position: absolute; top: 45px; right: 0px;">
+                                <h5 class="map-legend-headline">Map Legend</h5>
+                                <p></p>
+                                <div class="map-legend-color ts-map-legend-color-green"></div>Pumps currently in use
+                                <p></p>
+                                <p></p>
+                                <div class="map-legend-color ts-map-legend-color-blue"></div>Projects in development
+                                <div class="spacer"></div>
+                                <h5 class="map-legend-headline">Other Project Areas</h5>
+                                <p></p>
+                                 Nepal, Nicaragua
+                                <p></p>
+                                <p></p>
+                                
+                                
                             </div>
                         </div>
 
-                        <div class="w-100"></div>
 
+                    <div class="w-100"></div>
+
+
+
+
+                    <!-- <div class="row center"> -->
                         <div class="col">
+                            <div class="vertical-center">
+                                <img class="image-bigger vertical-center-img" src="../assets/img/encaplogo.png" alt="Encap Tech Logo">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="vertical-center">
+                                <img class="image-big vertical-center-img" src="../assets/img/globalgoodlogo.png" alt="Global Good Logo">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="vertical-center">
+                                <img class="image-bigger vertical-center-img" src="../assets/img/kickstartlogo.png" alt="Kickstart Logo">
+                            </div>
+                        </div>
+
+                        <!-- <div class="w-100"></div> -->
+
+                        <!-- <div class="col">
                             <div class="spacer-small"></div>
                             <a href="http://www.encaptech.com" class="arrow-button-small btn-arrow btn-border">
                                 <span>Encap Technologies
@@ -355,7 +441,8 @@
                                     </svg>
                                 </span>
                             </a>
-                        </div>
+                        </div> -->
+
                     </div>
 
 
