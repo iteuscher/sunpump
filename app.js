@@ -16,11 +16,13 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+const PORT = process.env.PORT || 3001;
+
 const nodemailer = require('nodemailer');
 
 let totalRaised = 0;
 
-http.listen(3001, function() {
+http.listen(PORT, function() {
     console.log('listening on *:3001');
  });
 
