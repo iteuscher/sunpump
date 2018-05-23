@@ -137,7 +137,8 @@ p {
 }
 
 .africa-map path:hover {
-fill: #aeaeae;
+/* fill: #aeaeae; */
+fill: rgb(182, 180, 180);
 }
 
 .map-legend {
@@ -161,10 +162,6 @@ fill: #aeaeae;
   border-left: 0px none;
 }
 
-.map-legend p{
-  margin: 0 !important;
-}
-
 .map-legend-headline{
   margin: 0 !important;
   padding: 0 !important;
@@ -172,14 +169,13 @@ fill: #aeaeae;
 }
 
 .map-legend-color {
-  height: 15px;
-  width: 15px;
-  margin-right: 5px;
-  float: left;
-  border-radius: 15px;
+  padding-top: 16px;
+  padding-bottom: 4px;
+  line-height: 18px;
+  vertical-align: middle;
 }
 
-.ts-map-legend-color-red {
+/* .ts-map-legend-color-red {
   background: #f14b3e;
 }
 
@@ -189,14 +185,29 @@ fill: #aeaeae;
 
 .ts-map-legend-color-yellow {
   background: #f5c155;
-}
+} */
 
 .ts-map-legend-color-blue {
-  background: blue;
+    background: blue;
+    height: 15px;
+    width: 15px;
+    align-self: center;
+    float: left;
+    border-radius: 15px;
+    margin-right: 6px;
+    vertical-align: middle;          /* vertical alignment of the inline element */
+    
 }
 
 .ts-map-legend-color-green {
-  background: green;
+    background: green;
+    height: 15px;
+    width: 15px;
+    float: left;
+    border-radius: 15px;
+    margin-right: 6px;
+    vertical-align: middle;          /* vertical alignment of the inline element */
+    
 }
 
 
@@ -304,7 +315,7 @@ fill: #aeaeae;
     padding-left: 3ex;
 }
 .list-less-padding li {
-    font-size: 1.6em;
+    font-size: 1.3rem;
     margin-bottom: 1.8ex;
     text-align: left;
     position: relative;
@@ -354,9 +365,45 @@ fill: #aeaeae;
 }
 
 .images-w-text {
-    background: green;
-    min-height: 20px;
+    background: darkslategray;
+    vertical-align: middle;
 }
+
+.images-w-text img {
+    width: 100%;
+    /* min-height: 100%; */
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    vertical-align: middle;
+    -webkit-filter: grayscale(0.1);
+    filter: grayscale(0.1);
+}
+
+.images-w-text .col-lg-6 {
+    padding: 0;
+    margin: 0 !important;
+    /* max-height: 475px; */
+}
+
+.images-w-text p {
+  padding: 2px;
+  /* width: 50%; */
+  font-size: 1.5rem;
+  /* font-size: 22px; */
+  font-weight: 800;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  /* background: rgba(0, 0, 0, 0.1); */
+  border-radius: 10%;
+
+  text-shadow: 1.2px 1.2px 1.2px #000;
+}
+
 
 
 /* bubble stat from water.org */
