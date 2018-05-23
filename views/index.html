@@ -98,8 +98,6 @@
                     <!-- <h1 class="h1-seo">Sun Pump</h1>
                     <h3>A revolutionary solar powered water pump.</h3> -->
 
-
-
                     <section class="cd-intro">
                         <h1 class="h1-seo cd-headline slide">
                             <span>Sun Pump is </span>
@@ -128,7 +126,7 @@
 
                     <div class="row">
                         <div class="col-md flush-left">
-                            <h2 class="list-title">Features of the Sun Pump</h2>
+                            <h3 class="list-title">Features of the Sun Pump</h3>
                             <ul class=" list-less-padding">
                                 <li>
                                     Lowest price for a reliable solar pump
@@ -251,44 +249,58 @@
                 </div>
             </div>
 
-                <div class="banner center">
-                    <div class="spacer"></div>
-                    <h2 class="list-title">Areas of Use</h2>
-
-                        <ul class="bannerContainer ">
-                            <li class="bannerItem ">
-                                <img class="image-big" id="farmingImage" src="../assets/img/farming.jpeg">
-                                <div>Farming & Irrigation</div>
-                            </li>
-                            <li class="bannerItem ">
-                                <img class="image-big" id="troughImage" src="../assets/img/trough.jpeg">
-                                <div>Livestock Watering</div>
-                            </li>
-                        </ul>
-
-
-                </div>
-
+            <div class="banner center">
                 <div class="spacer"></div>
+                <h2 class="list-title">Impact of Sun Pump</h2>
+
+                <div class="spacer-small"></div>
+
+                    <!-- <ul class="bannerContainer ">
+                        <li class="bannerItem ">
+                            <img class="image-big" id="farmingImage" src="../assets/img/farming.jpeg">
+                            <div>Farming & Irrigation</div>
+                        </li>
+                        <li class="bannerItem ">
+                            <img class="image-big" id="troughImage" src="../assets/img/trough.jpeg">
+                            <div>Livestock Watering</div>
+                        </li>
+                    </ul> -->
+            
 
 
-            <div class="container-fluid images-w-text">
-                <div class="row">
-                    <div class="col-lg-6">
-                        Grow 2 crop cycles / year-round / even in the dry season 
+                <div class="container-fluid images-w-text">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="image-w-text">
+                                <img src="../assets/img/16x10/farm1.jpg" alt="Farm field">
+                                <p>Have multiple crop cycles, grow year-round</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="image-w-text">
+                                <img src="../assets/img/16x10/tomatoes3.jpg" alt="Tomatoes Harvest">
+                                <p>Grow high-value, water-intensive crops</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="image-w-text">
+                                <img src="../assets/img/16x10/field-pano.jpg" alt="Dry Water">
+                                <p>Stay protected from drought and climate change</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="image-w-text">
+                                <img src="../assets/img/16x10/farmers.jpg" alt="Farming">
+                                <p>Boost buisness and financial security</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        High value crops *tomatoes image*
-                    </div>
-                    <div class="col-lg-6">
-                        promote financial security // protection from drought, climate change, etc
-                    </div>
-                    <div class="col-lg-6">
-                        boost buisness, reduce povery
-                    </div>
+
                 </div>
 
-            </div>
+                <div class="spacer-medium"></div>
+
+            </div> <!-- end of the banner section -->
 
 
 
@@ -320,19 +332,35 @@
                                 by Bryan Braun http://bryanbraun.com 
                                 http://bryanbraun.github.com/africa-map-raphael/ -->
                             <div id="africa-map" class="africa-map"> </div>
+                            <p id="programinfo">Program Information</p>
                             <script src="../assets/js/africa-map/raphael-min.js"></script>
                             <script src="../assets/js/africa-map/africa-paths.js"></script>
                             <script>
                                 window.onload = function () {
-                                    // Create canvas and define attributes shared by all paths.
+                                   // Create canvas and define attributes shared by all paths.
                                     var R = Raphael("africa-map", 620, 690),
                                         attr = {
-                                            "fill": "#b9b9b9",
-                                            "stroke": "#fff",
+                                            "fill": "lightgray",
+                                            "stroke": "white",
                                             "stroke-miterlimit": "4",
                                             "stroke-width": "1",
                                             "transform": "s0.06,0.06,60,0" // Scales the path to a useful size.
                                         };
+
+                                    // trying to scale: http://bertanguven.com/raphael-js-setsize-function
+                                    // var R = Raphael("africa-map", width, scrollHeight),
+                                    //  attr = {
+                                    //         "fill": "#b9b9b9",
+                                    //         "stroke": "#fff",
+                                    //         "stroke-miterlimit": "4",
+                                    //         "stroke-width": "1",
+                                    //         "transform": "s0.06,0.06,60,0" // Scales the path to a useful size.
+                                    //     };
+                                    // R.setViewBox(0, 0, width, height);
+                                    // R.canvas.setAttribute('preserveAspectRatio', 'none');
+                                    // $('#africa-map').attr('width', newWeight).attr('height', newHeight);
+
+
                                     // Define map object. 
                                     var africaMap = {};
                                     for (var nation in africaPaths) {
@@ -349,7 +377,16 @@
                                     var demo2 = document.getElementById('kenya'); demo2.style.fill = "green";
                                     var demo3 = document.getElementById('malawi'); demo3.style.fill = "blue";
                                     var demo4 = document.getElementById('uganda'); demo4.style.fill = "blue";
-                                    // demo2.tooltip();
+                                    
+                                    // show program info https://parall.ax/blog/view/2985/tutorial-creating-an-interactive-svg-map
+                                    // regions[i].mouseover(function (e) {
+                                    //     this.node.style.opacity = 0.7;
+                                    //     document.getElementById('programinfo').innerText = this.data('region');
+                                    // });
+
+                                    // regions[i].mouseout(function (e) {
+                                    //     this.node.style.opacity = 1;
+                                    // });
                                 };
                             </script>
                         </div>
@@ -357,17 +394,21 @@
 
                             <div class="map-legend" style="z-index: 0; position: absolute; top: 45px; right: 0px;">
                                 <h5 class="map-legend-headline">Map Legend</h5>
-                                <p></p>
-                                <div class="map-legend-color ts-map-legend-color-green"></div>Pumps currently in use
-                                <p></p>
-                                <p></p>
-                                <div class="map-legend-color ts-map-legend-color-blue"></div>Projects in development
-                                <div class="spacer"></div>
+
+                                <div class="map-legend-color">
+                                    <div class="ts-map-legend-color-green"></div>
+                                    Pumps currently in use
+                                </div>
+
+                                <div class="map-legend-color">
+                                    <div class="ts-map-legend-color-blue"></div>
+                                    Projects in development
+                                </div>
+
+                                <div class="spacer-small"></div>
+
                                 <h5 class="map-legend-headline">Other Project Areas</h5>
-                                <p></p>
-                                 Nepal, Nicaragua
-                                <p></p>
-                                <p></p>
+                                <p>Nepal, Nicaragua</p>
                                 
                                 
                             </div>
