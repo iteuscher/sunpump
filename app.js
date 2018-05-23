@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fetch = require("node-fetch");
+var request = require("request");
 
 var index = require('./routes/index');
 var about = require('./routes/about');
@@ -24,7 +25,7 @@ http.listen(3001, function() {
  });
 
  io.on('connection', function(socket) {
-  socket.emit("setAmount", {amount: totalRaised});
+  //socket.emit("setAmount", {amount: totalRaised});
 
   console.log('A user connected');
 
@@ -88,6 +89,48 @@ app.post('/contact', function (req, res) {
     }
   });
 });
+
+let url = "https://cbracco%40encaptech.com:UJtzrkflnFwxKaUjvEiBP0mYc6W3mkGyjHXfi37Gp48ymnGwgMOiKw@donorbox.org/api/v1/donations";
+let donations = [];
+
+updateDonations();
+
+app.get('/api/amountRaised', function(req, res){
+  updateTotalRaised();
+  res.send(JSON.stringify({amount: totalRaised}));
+})
+
+app.get('/api/donations', function(req, res){
+  res.send(JSON.stringify(donations));
+});
+
+app.get('/api/updateDonations', function(req, res){
+  updateDonations();
+  res.send("Success");
+});
+
+function updateDonations(){
+  request(url, function (error, response, body) {
+    if(error){
+      console.log("ERROR: Unable to update donations")
+    }
+    else{
+      donations = JSON.parse(body);
+    }
+  });
+  updateTotalRaised();
+}
+
+function updateTotalRaised(){
+  let tempTotal = 0;
+  for(let i = 0; i < donations.length; i++){
+    let currDonation = donations[i];
+    tempTotal += parseFloat(currDonation.amount);
+  }
+  totalRaised = tempTotal;
+}
+
+
 
 
 // catch 404 and forward to error handler

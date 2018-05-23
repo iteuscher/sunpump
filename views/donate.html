@@ -328,8 +328,8 @@
 
                             <div class="spacer-small"></div>
 
-                            <input id="tempNameInput" type="text" value="" placeholder="Name">
-                            <button id="progress-button">Click me to "donate" $10</button>
+                            <!-- <input id="tempNameInput" type="text" value="" placeholder="Name">
+                            <button id="progress-button">Click me to "donate" $10</button> -->
 
 
                             <div class="spacer"></div>
@@ -717,6 +717,8 @@
     </script>
 
 <script>
+           
+
     //DONATION STUFF
             let button = document.getElementById("button");
             let bar = document.getElementById("bar");
@@ -741,8 +743,10 @@
                 totalRaised = data.amount;
                 updateDonationBar(0);
             })
-
-            progressButton.addEventListener("click",function(){
+        
+            //OLD BUTTON FUNCTION
+            /**
+             * progressButton.addEventListener("click",function(){
                 let amount = 10;
                 updateDonationBar(amount);
                 let tempName = tempNameInput.value;
@@ -754,6 +758,41 @@
 
                 socket.emit("clientDonation", {name: tempName, amount: amount});
             });
+            */
+
+            populateDonations();
+            
+            //NEW BUTTON FUNCTION
+            progressButton.addEventListener("click",function(){
+                fetch("/api/updateDonations").then(function (response){
+                    populateDonations();
+                });
+                
+            });
+
+            function setTotalRaised(){
+                fetch("/api/amountRaised").then(function(response){
+                    response.json().then(function(res){
+                        console.log("AMOUNT: " + res.amount);
+                        totalRaised = res.amount;
+                        setDonationBar(totalRaised);
+                    })
+                });
+            }
+
+            function populateDonations(){
+                fetch("/api/donations").then(function(response){
+                    response.json().then(function(res){
+                        let donations = res;
+                        for(let i = 0; i < donations.length; i++){
+                            let currDonation = donations[i];
+                            let tempName = currDonation.donor.name;
+                            let tempAmount = currDonation.amount;
+                            addDonationToList(tempName, tempAmount);
+                        }
+                    })
+                }).then(setTotalRaised());
+            }
 
             function setDonationBar(amount){
                 console.log("SETTING AT: " + amount);
@@ -788,7 +827,7 @@
 
             function addDonationToList(name, amount){
                 let tempListElement = document.createElement("li");
-                tempListElement.innerText = name + " donated $" + amount + "!";
+                tempListElement.innerText = name + " donated $" + amount;
                 messageList.appendChild(tempListElement);
                 messageList.scrollTop = messageList.scrollHeight;
             }
