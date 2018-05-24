@@ -132,14 +132,40 @@ p {
 
 .africa-map path {
 fill: lightgray !important;
-stroke: darkslategray !important;
+stroke: white !important;
 }
 
 
 .africa-map path:hover {
 /* fill: #aeaeae; */
-fill: darkgray !important;
+fill: rgb(180, 180, 180) !important;
 }
+
+
+.africa-map path, .africa-map path * {
+  transition: all 0.2s ease-out;
+}
+
+/*
+.africa-map path{
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.africa-map path:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.africa-map path:hover .africa-map path * {
+  fill: #14b1bb;
+} */
+
+
+
+
+
+
 
 .map-legend {
   background: #FFF;
