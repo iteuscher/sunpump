@@ -37,6 +37,12 @@ Colors
 ::selection{
 } */
 
+#progressBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .bannerItem {
 font-size: 1.5em; 
 padding-bottom: 1.5em;

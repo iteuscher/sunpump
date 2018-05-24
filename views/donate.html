@@ -320,7 +320,7 @@
 
                             <h4 id="counter">0 Pumps Already Donated!</h4>
                             <div class="progress">
-                                <div id="bar" class="progress-bar bg-success donations-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="150" >
+                                <div id="progressBar" class="progress-bar bg-success donations-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="150" style="height:2.5em">
                                     <div id="progress-value" style="font-weight: bold; font-size: 1.5em">$0/150</div>
                                 </div>
                             </div>
@@ -331,7 +331,7 @@
                             <button id="progress-button">Click me to "donate" $10</button> -->
 
 
-                            <div class="spacer"></div>
+                            <!-- <div class="spacer"></div> -->
 
                             <h5> Donors </h5>
 
@@ -668,7 +668,7 @@
     <script>      
     //DONATION STUFF
             let button = document.getElementById("button");
-            let bar = document.getElementById("bar");
+            let bar = document.getElementById("progressBar");
             let progressValue = document.getElementById("progress-value");
             let progressHeader = document.getElementById("progress-header");
             let progressButton = document.getElementById("progress-button");
