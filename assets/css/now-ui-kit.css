@@ -132,14 +132,36 @@ p {
 
 .africa-map path {
 fill: lightgray !important;
-stroke: darkslategray !important;
+stroke: white !important;
 }
 
 
 .africa-map path:hover {
 /* fill: #aeaeae; */
-fill: darkgray !important;
+fill: rgb(180, 180, 180) !important;
 }
+
+
+.africa-map path, .africa-map path * {
+  transition: all 0.2s ease-out;
+}
+
+/*
+.africa-map path{
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.africa-map path:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.africa-map path:hover .africa-map path * {
+  fill: #14b1bb;
+} */
+
+
 
 .map-legend {
   background: #FFF;
@@ -898,11 +920,11 @@ fill: darkgray !important;
         }
 
         .resp-sharing-button--reddit {
-        background-color: #5f99cf
+        background-color: #F6411C
         }
 
         .resp-sharing-button--reddit:hover {
-        background-color: #3a80c1
+        background-color: rgb(207, 54, 23);
         }
 
         .resp-sharing-button--google {
@@ -1014,14 +1036,14 @@ fill: darkgray !important;
         }
 
         .resp-sharing-button--reddit {
-        background-color: #5f99cf;
-        border-color: #5f99cf;
+        background-color: #F6411C;
+        border-color: #F6411C;
         }
 
         .resp-sharing-button--reddit:hover,
         .resp-sharing-button--reddit:active {
-        background-color: #3a80c1;
-        border-color: #3a80c1;
+        background-color: rgb(207, 54, 23);;
+        border-color: rgb(207, 54, 23);
         }
 
         .resp-sharing-button--whatsapp {
