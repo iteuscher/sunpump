@@ -110,7 +110,7 @@ app.get('/api/donations', function(req, res){
 });
 
 app.get('/api/updateDonations', function(req, res){
-  updateDonations();
+  setTimeout(updateDonations(), 5000);
   res.send("Success");
 });
 
