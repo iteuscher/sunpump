@@ -110,10 +110,17 @@ app.get('/api/donations', function(req, res){
 });
 
 app.get('/api/updateDonations', function(req, res){
-  let tempDonation = {name: req.query.name, amount: req.query.amount};
-  donations.push(tempDonation);
-  io.emit("donation", tempDonation);
-  res.send("Success");
+  if(req.query.name == undefined || req.query.amount == undefined){
+    res.send("Failed due to bad query format");
+  }
+  else{
+    let tempDonation = {name: req.query.name, amount: req.query.amount};
+    donations.push(tempDonation);
+    io.emit("donation", tempDonation);
+    res.send("Success");
+  }
+
+  
 });
 
 function updateDonations(){
