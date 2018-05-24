@@ -94,8 +94,11 @@ app.post('/contact', function (req, res) {
 
 let url = "https://cbracco%40encaptech.com:UJtzrkflnFwxKaUjvEiBP0mYc6W3mkGyjHXfi37Gp48ymnGwgMOiKw@donorbox.org/api/v1/donations";
 let donations = [];
+let donationsLength = 0;
 
 updateDonations();
+
+donationsLength = donations.length;
 
 app.get('/api/amountRaised', function(req, res){
   updateTotalRaised();
@@ -118,6 +121,11 @@ function updateDonations(){
     }
     else{
       donations = JSON.parse(body);
+      if(donations.length > donationsLength){
+        let newDonation = donations[0];
+        donationsLength = donations.length;
+        io.emit("donation", {name: newDonation.donor.name, amount: newDonation.amount})
+      }
     }
   });
   updateTotalRaised();

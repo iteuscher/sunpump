@@ -760,16 +760,16 @@
             */
 
             populateDonations();
-            updateServerDonations();
+            //updateServerDonations();
 
-            function updateServerDonations(){
-                fetch("/api/updateDonations").then(function (response){
-                    populateDonations();
-                });
-            }
+            // function updateServerDonations(){
+            //     fetch("/api/updateDonations").then(function (response){
+            //         populateDonations();
+            //     });
+            // }
 
             //NEW BUTTON FUNCTION
-            progressButton.addEventListener("click",updateServerDonations());
+            //progressButton.addEventListener("click",updateServerDonations());
 
             function setTotalRaised(){
                 fetch("/api/amountRaised").then(function(response){
