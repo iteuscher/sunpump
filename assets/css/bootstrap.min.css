@@ -4466,7 +4466,7 @@ tbody.collapse.show {
     display: flex;
     overflow: hidden;
     font-size: .75rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
     text-align: center;
     background-color: #e9ecef;
     border-radius: .25rem
