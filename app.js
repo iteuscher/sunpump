@@ -111,7 +111,7 @@ app.get('/api/donations', function(req, res){
 
 app.get('/api/updateDonations', function(req, res){
   setTimeout(updateDonations(), 5000);
-  res.send("Success");
+  setTimeout(function() { res.send("Success") }, 6000);
 });
 
 function updateDonations(){
