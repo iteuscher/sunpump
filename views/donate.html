@@ -830,8 +830,14 @@
             function addDonationToList(name, amount){
                 let tempListElement = document.createElement("li");
                 tempListElement.innerText = name + " donated $" + amount;
-                messageList.appendChild(tempListElement);
-                messageList.scrollTop = messageList.scrollHeight;
+                if(messageList.childNodes.length == 0){
+                    messageList.appendChild(tempListElement);
+                }
+                else{
+                    messageList.insertBefore(tempListElement,messageList.firstChild);
+                }
+                //messageList.appendChild(tempListElement);
+                //messageList.scrollTop = messageList.scrollHeight;
             }
 
     //END OF DONATION STUFF

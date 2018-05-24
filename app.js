@@ -131,7 +131,7 @@ function updateDonations(){
     else{
       let rawDonations = JSON.parse(body);
       let newDonationsList = [];
-      for(let i = rawDonations.length - 1; i >= 0; i--){
+      for(let i = 0; i < rawDonations.length; i++){
         let tempDonation = rawDonations[i];
         newDonationsList.push({name: tempDonation.donor.name, amount: tempDonation.amount});
       }
