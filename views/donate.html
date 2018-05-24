@@ -665,59 +665,7 @@
     <!-- Plugin for headline slide in JavaScript -->
     <script src="../assets/js/plugins/headline-slide.js"></script>
 
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    <script>
-    //Stripe checkout to buy a pump
-
-        var handler = StripeCheckout.configure({
-            key: 'pk_test_P1lN2vw2KxXgACvxWaOnpH5m',
-            image: 'http://www.encaptech.com/_images/index1.jpg',
-            locale: 'auto',
-            shippingAddress: "true",
-            zipCode: "true",
-            token: function (token) {
-                // You can access the token ID with `token.id`.
-                // Get the token ID to your server-side code for use.
-            }
-        });
-
-        document.getElementById('buy1').addEventListener('click', function (e) {
-            // Open Checkout with further options:
-            handler.open({
-                name: 'Sun Pump',
-                description: 'Solar Water Pump',
-                amount: 10000
-
-            });
-            e.preventDefault();
-        });
-
-        // Close Checkout on page navigation:
-        window.addEventListener('popstate', function () {
-            handler.close();
-        });
-
-        document.getElementById('buy2').addEventListener('click', function (e) {
-            // Open Checkout with further options:
-            handler.open({
-                name: 'Sun Pump',
-                description: 'Solar Water Pump',
-                amount: 10000
-
-            });
-            e.preventDefault();
-        });
-
-        // Close Checkout on page navigation:
-        window.addEventListener('popstate', function () {
-            handler.close();
-        });
-
-    </script>
-
-<script>
-           
-
+    <script>      
     //DONATION STUFF
             let button = document.getElementById("button");
             let bar = document.getElementById("bar");
@@ -835,56 +783,6 @@
             }
 
     //END OF DONATION STUFF
-</script>
-
-<script>
-    //Stripe checkout to buy a pump
-
-        var handler = StripeCheckout.configure({
-          key: 'pk_test_P1lN2vw2KxXgACvxWaOnpH5m',
-          image: 'http://www.encaptech.com/_images/index1.jpg',
-          locale: 'auto',
-          shippingAddress: "true",
-          zipCode: "true",
-          token: function(token) {
-            // You can access the token ID with `token.id`.
-            // Get the token ID to your server-side code for use.
-          }
-        });
-
-        document.getElementById('buy1').addEventListener('click', function(e) {
-          // Open Checkout with further options:
-          handler.open({
-            name: 'Sun Pump',
-            description: 'Solar Water Pump',
-            amount: 10000
-
-          });
-          e.preventDefault();
-        });
-
-        // Close Checkout on page navigation:
-        window.addEventListener('popstate', function() {
-          handler.close();
-        });
-
-        document.getElementById('buy2').addEventListener('click', function(e) {
-          // Open Checkout with further options:
-          handler.open({
-            name: 'Sun Pump',
-            description: 'Solar Water Pump',
-            amount: 10000
-
-          });
-          e.preventDefault();
-        });
-
-        // Close Checkout on page navigation:
-        window.addEventListener('popstate', function() {
-          handler.close();
-        });
-
-    //END of stripe checkout
 </script>
 
 </html>

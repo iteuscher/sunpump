@@ -163,10 +163,6 @@ fill: rgb(180, 180, 180) !important;
 
 
 
-
-
-
-
 .map-legend {
   background: #FFF;
   padding: 0px;
@@ -924,11 +920,11 @@ fill: rgb(180, 180, 180) !important;
         }
 
         .resp-sharing-button--reddit {
-        background-color: #5f99cf
+        background-color: #F6411C
         }
 
         .resp-sharing-button--reddit:hover {
-        background-color: #3a80c1
+        background-color: rgb(207, 54, 23);
         }
 
         .resp-sharing-button--google {
@@ -1040,14 +1036,14 @@ fill: rgb(180, 180, 180) !important;
         }
 
         .resp-sharing-button--reddit {
-        background-color: #5f99cf;
-        border-color: #5f99cf;
+        background-color: #F6411C;
+        border-color: #F6411C;
         }
 
         .resp-sharing-button--reddit:hover,
         .resp-sharing-button--reddit:active {
-        background-color: #3a80c1;
-        border-color: #3a80c1;
+        background-color: rgb(207, 54, 23);;
+        border-color: rgb(207, 54, 23);
         }
 
         .resp-sharing-button--whatsapp {
