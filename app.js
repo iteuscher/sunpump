@@ -16,6 +16,11 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+// Set your secret key: remember to change this to your live secret key in production
+// See your keys here: https://dashboard.stripe.com/account/apikeys
+var stripe = require("stripe")("sk_test_UbVI1mTyg3mEoHww5x21v1Cp");
+
+
 const PORT = process.env.PORT || 3001;
 
 const nodemailer = require('nodemailer');
@@ -91,6 +96,24 @@ app.post('/contact', function (req, res) {
     }
   });
 });
+
+app.post ('/purchase', function(req, res) {
+
+  res.send("success")
+
+  console.log("body stuff: " + req.body.id)
+
+  // Token is created using Checkout or Elements!
+  // Get the payment token ID submitted by the form:
+  const token = req.body.id; // Using Express
+
+  const charge = stripe.charges.create({
+    amount: 9000,
+    currency: 'usd',
+    description: 'Pump Bought',
+    source: token,
+  })
+})
 
 let url = "https://cbracco%40encaptech.com:UJtzrkflnFwxKaUjvEiBP0mYc6W3mkGyjHXfi37Gp48ymnGwgMOiKw@donorbox.org/api/v1/donations";
 let donations = [];

@@ -270,7 +270,7 @@
                             <div>Livestock Watering</div>
                         </li>
                     </ul> -->
-            
+
 
 
                 <div class="container-fluid images-w-text">
@@ -501,8 +501,8 @@
 
                                 <h5 class="map-legend-headline">Other Project Areas</h5>
                                 <p>Nepal, Nicaragua</p>
-                                
-                                
+
+
                             </div>
                         </div>
 
@@ -767,13 +767,23 @@
 
         var handler = StripeCheckout.configure({
             key: 'pk_test_P1lN2vw2KxXgACvxWaOnpH5m',
-            image: 'http://www.encaptech.com/_images/index1.jpg',
+            image: '../assets/favicons/android-chrome-512x512.png',
             locale: 'auto',
-            shippingAddress: "true",
-            zipCode: "true",
+            shippingAddress: true,
+            billingAddress: true,
+            zipCode: true,
             token: function (token) {
+
+              let tokenid = {id: token.id}
+              console.log(tokenid)
+
                 // You can access the token ID with `token.id`.
                 // Get the token ID to your server-side code for use.
+                fetch('/purchase', {
+                  method: 'post',
+                  headers: {"Content-Type": "application/json"},
+                  body: JSON.stringify(tokenid),
+                })
             }
         });
 
@@ -782,7 +792,7 @@
             handler.open({
                 name: 'Sun Pump',
                 description: 'Solar Water Pump',
-                amount: 10000
+                amount: 9000
 
             });
             e.preventDefault();
