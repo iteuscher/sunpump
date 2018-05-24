@@ -101,8 +101,6 @@ app.post ('/purchase', function(req, res) {
 
   res.send("success")
 
-  console.log("body stuff: " + req.body.id)
-
   // Token is created using Checkout or Elements!
   // Get the payment token ID submitted by the form:
   const token = req.body.id; // Using Express
@@ -143,7 +141,7 @@ app.get('/api/updateDonations', function(req, res){
     res.send("Success");
   }
 
-  
+
 });
 
 function updateDonations(){
