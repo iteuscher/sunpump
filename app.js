@@ -113,6 +113,7 @@ app.get('/api/updateDonations', function(req, res){
   let tempDonation = {name: req.query.name, amount: req.query.amount};
   donations.push(tempDonation);
   io.emit("donation", tempDonation);
+  res.send("Success");
 });
 
 function updateDonations(){
