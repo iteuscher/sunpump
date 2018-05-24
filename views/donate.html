@@ -769,8 +769,7 @@
             }
 
             //NEW BUTTON FUNCTION
-            progressButton.addEventListener("click",updateServerDonations{
-            });
+            progressButton.addEventListener("click",updateServerDonations());
 
             function setTotalRaised(){
                 fetch("/api/amountRaised").then(function(response){
@@ -784,6 +783,7 @@
 
             function populateDonations(){
                 fetch("/api/donations").then(function(response){
+                    messageList.innerHTML = "";
                     response.json().then(function(res){
                         let donations = res;
                         for(let i = 0; i < donations.length; i++){
