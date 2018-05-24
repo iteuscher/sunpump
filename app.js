@@ -94,8 +94,11 @@ app.post('/contact', function (req, res) {
 
 let url = "https://cbracco%40encaptech.com:UJtzrkflnFwxKaUjvEiBP0mYc6W3mkGyjHXfi37Gp48ymnGwgMOiKw@donorbox.org/api/v1/donations";
 let donations = [];
+let donationsLength = 0;
 
 updateDonations();
+
+donationsLength = donations.length;
 
 app.get('/api/amountRaised', function(req, res){
   updateTotalRaised();
@@ -107,8 +110,17 @@ app.get('/api/donations', function(req, res){
 });
 
 app.get('/api/updateDonations', function(req, res){
-  updateDonations();
-  res.send("Success");
+  if(req.query.name == undefined || req.query.amount == undefined){
+    res.send("Failed due to bad query format");
+  }
+  else{
+    let tempDonation = {name: req.query.name, amount: req.query.amount};
+    donations.push(tempDonation);
+    io.emit("donation", tempDonation);
+    res.send("Success");
+  }
+
+  
 });
 
 function updateDonations(){
@@ -117,7 +129,15 @@ function updateDonations(){
       console.log("ERROR: Unable to update donations")
     }
     else{
-      donations = JSON.parse(body);
+      let rawDonations = JSON.parse(body);
+      let newDonationsList = [];
+      for(let i = rawDonations.length - 1; i >= 0; i--){
+        let tempDonation = rawDonations[i];
+        newDonationsList.push({name: tempDonation.donor.name, amount: tempDonation.amount});
+      }
+
+      donations = newDonationsList;
+      donationsLength = donations.length;
     }
   });
   updateTotalRaised();
