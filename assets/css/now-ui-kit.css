@@ -130,15 +130,15 @@ p {
     }
 }
 
-.africa-map {
-    max-width: 620px;
-    max-height: 700px;
-    overflow: scroll !important;
+.africa-map path {
+fill: lightgray !important;
+stroke: darkslategray !important;
 }
+
 
 .africa-map path:hover {
 /* fill: #aeaeae; */
-fill: rgb(182, 180, 180);
+fill: darkgray !important;
 }
 
 .map-legend {
@@ -348,17 +348,13 @@ fill: rgb(182, 180, 180);
     margin-bottom: 5px;
 }
 
-/* .vertical-center
+.vertical-center
 {
     vertical-align: middle;
     white-space: nowrap;
     display: inline-block;
-} */
-
-.vertical-center {
-    height: 65px;
-    line-height: 250px;
-}
+    line-height: 120px;
+} 
 
 .vertical-center .vertical-center-img {
     vertical-align: middle;
