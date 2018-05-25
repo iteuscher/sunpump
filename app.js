@@ -75,7 +75,6 @@ app.post('/contact', function (req, res) {
   
   //send success
   console.log('onto the app.js nodemailer stuff!')
-  res.sendStatus(200);
 
   let mailOpts, smtpTrans;
   smtpTrans = nodeMailer.createTransport({
@@ -84,7 +83,7 @@ app.post('/contact', function (req, res) {
     secure: true,
     auth: {
       user: 'sun.pump.email.system@gmail.com',
-      pass: 'murphy123andenc@p7878'
+      pass: 'ewbw kuao pqjs kbtg'
     }
   });
   mailOpts = {
@@ -104,14 +103,14 @@ app.post('/contact', function (req, res) {
   smtpTrans.sendMail(mailOpts, function (error, response) {
     if (error) {
       return 
-      console.log('ERROR sending contact form: ', error)
+      console.log('ERROR sending contact form: '+ error)
     }
     else {
       //res.render('contact-success');
-      console.log('Welcome email sent to: ' + req.body.email);
+      console.log('contact form message sent successfully to ' + req.body.email)
+      res.sendStatus(200);
       res.sendFile('index.html');
       return 
-      console.log('contact form message sent successfully!')
     }
   });
 });

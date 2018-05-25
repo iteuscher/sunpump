@@ -452,149 +452,100 @@
             <div id="contact" class="section section-basic">
                 <div class="container">
                     <h2>Contact</h2>
-                        <p>If you have questions, feedback, know somebody who might benefit from our pump, please contact us!
+                        <p>If you have questions, feedback, or know someone who might benefit from our pump, please contact us!
                          </p>
 
-
-
-                        <form action="/contact" id="contact-form" method="post" role="form">
-
-                                <header>
-                                    <!-- <h2>Example Responsive Form</h2> -->
-                                </header>
-
-                                <div>
-                                    <label class="desc" id="title1" for="name">Full Name</label>
-                                    <div>
-                                        <input id="name" name="name" type="text" placeholder="Your Name" required="required" class="field text fn" value="" size="8" tabindex="1">
-                                    </div>
+                        <div id="contactFormSuccessAlert" style="display:none;" class="alert alert-success" role="alert">
+                            <div class="container">
+                                <div class="alert-icon">
+                                    <i class="now-ui-icons ui-2_like"></i>
                                 </div>
-
-                                <div>
-                                    <label class="desc" id="title3" for="email">
-                                        Email
-                                    </label>
-                                    <div>
-                                        <input id="email" name="email" type="email" placeholder="Your email" required="required" spellcheck="false" value="" maxlength="255" tabindex="3">
-                                    </div>
+                                <strong>Contact Form Submitted!</strong> Your message has been sent to Sun Pump. You'll recive a confirmation email soon.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">
+                                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="contactFormFailAlert" style="display:none;" class="alert alert-danger" role="alert">
+                            <div class="container">
+                                <div class="alert-icon">
+                                    <i class="now-ui-icons ui-1_bell-53"></i>
                                 </div>
+                                <strong>Form failed to submit!</strong> Try submitting the form again or email contact@sunpump.org for help.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">
+                                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
 
-                                <div>
-                                    <label class="desc" id="title4" for="message">
-                                        Message
-                                    </label>
-
-                                    <div>
-                                        <textarea id="message" name="message" placeholder="Enter your message here" spellcheck="true" rows="6" cols="50" tabindex="4"></textarea>
+                        <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-md-8">
+                                <form id="contactForm" class="contactForm form" role="form">
+                                    <!-- action="/contact" method="POST" -->
+                                    <div class="form-group">
+                                        <label class="contact-form-label" for="name">Your Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your name *" tabindex="1" required>
                                     </div>
-                                </div>
-
-                                    <div>
-                                        <div>
-                                            <input id="saveForm" name="saveForm" type="submit" value="Submit">
-                                        </div>
+                                    <div class="form-group">
+                                        <label class="contact-form-label" for="email">Your Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email *" tabindex="2" required>
                                     </div>
-                        </form>
+                                    <!-- <div class="form-group">
+                                        <label class="contact-form-label" for="subject">Subject </label>
+                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label class="contact-form-label" for="message">Message *</label>
+                                        <textarea rows="6" cols="50" name="message" class="form-control" id="message" placeholder="Message *" tabindex="3" required></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-hover btn-primary btn-start-order">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
 
-                        <style>
-                                form header {
-                                margin: 0 0 20px 0;
-                                }
-                                form header div {
-                                font-size: 90%;
-                                color: #999;
-                                }
-                                form header h2 {
-                                margin: 0 0 5px 0;
-                                }
-                                form > div {
-                                clear: both;
-                                overflow: hidden;
-                                padding: 1px;
-                                margin: 0 0 10px 0;
-                                }
-                                form > div > fieldset > div > div {
-                                margin: 0 0 5px 0;
-                                }
-                                form > div > label,
-                                legend {
-                                    width: 25%;
-                                float: left;
-                                padding-right: 10px;
-                                }
-                                form > div > div,
-                                form > div > fieldset > div {
-                                width: 75%;
-                                float: right;
-                                }
-                                form > div > fieldset label {
-                                    font-size: 90%;
-                                }
-                                fieldset {
-                                    border: 0;
-                                padding: 0;
-                                }
+                        <script>
+                            const contactForm = document.querySelector('#contactForm');
+                            contactForm.addEventListener('submit', (e) => {
+                                e.preventDefault();
+                                let name = contactForm.querySelector('#name').value
+                                let email = contactForm.querySelector('#email').value
+                                let message = contactForm.querySelector('#message').value
+                                post('/contact', { name, email, message })
 
-                                input[type=text],
-                                input[type=email],
-                                input[type=url],
-                                input[type=password],
-                                textarea {
-                                    width: 70%;
-                                border-top: 1px solid #ccc;
-                                border-left: 1px solid #ccc;
-                                border-right: 1px solid #eee;
-                                border-bottom: 1px solid #eee;
-                                }
-                                input[type=text],
-                                input[type=email],
-                                input[type=url],
-                                input[type=password] {
-                                width: 50%;
-                                }
-                                input[type=text]:focus,
-                                input[type=email]:focus,
-                                input[type=url]:focus,
-                                input[type=password]:focus,
-                                textarea:focus {
-                                outline: 0;
-                                border-color: #4697e4;
-                                }
+                                contactForm.reset();  // Reset all form data
 
-                                @media (max-width: 600px) {
-                                form > div {
-                                    margin: 0 0 15px 0;
-                                }
-                                form > div > label,
-                                legend {
-                                    width: 90%;
-                                    float: none;
-                                    margin: 0 0 5px 0;
-                                }
-                                form > div > div,
-                                form > div > fieldset > div {
-                                    width: 90%;
-                                    float: none;
-                                }
-                                input[type=text],
-                                input[type=email],
-                                input[type=url],
-                                input[type=password],
-                                textarea,
-                                select {
-                                    width: 90%;
-                                }
-                                }
-                                @media (min-width: 1200px) {
-                                form > div > label,
-                                    legend {
-                                    text-align: right;
-                                }
-                                }
-                        </style>
+                                document.querySelector('#contactFormSuccessAlert').style.display = "flex";
+
+                                // if something went wrong...
+                                //document.querySelector('#contactFormFailAlert').style.display = "flex";
+
+                                return false; // Prevent page refresh                               
+                            });
+
+                            function post(path, data) {
+                                return window.fetch(path, {
+                                    method: 'POST',
+                                    headers: {
+                                        'Accept': 'application/json',
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify(data)
+                                });
+                            }
+                        </script>
+
+                        <div class="col-sm-1"></div>
 
                         <!-- <div class="email">
-                            <a href="mailto:info@sunpump.org">
+                            <a href="mailto:contact@sunpump.org">
                                 <i class="now-ui-icons ui-1_email-85"></i> info@sunpump.org
                             </a>
                         </div> -->
@@ -621,8 +572,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:info@sunpump.org">
-                                <i class="fa fa-sm fa-envelope"></i>  info@sunpump.org
+                            <a href="mailto:contact@sunpump.org">
+                                <i class="fa fa-sm fa-envelope"></i>  contact@sunpump.org
                             </a>
                         </li>
                     </ul>
