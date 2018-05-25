@@ -37,6 +37,11 @@ Colors
 ::selection{
 } */
 
+#header-container {
+    display: flex;
+    justify-content: center;
+}
+
 #progressBar {
     display: flex;
     flex-direction: column;

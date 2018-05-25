@@ -93,8 +93,7 @@
             <div id="top" class="container">
                 <div class="content-center brand">
 
-                    <h1 class="h1-seo">Donate to Sun Pump</h1>
-                    <h3>A revolutionary solar powered water pump.</h3>
+                    <h1 class="h1-seo">Our Goal: $150,000</h1>
 
                 </div>
             </div>
@@ -685,7 +684,7 @@
                     messageList.innerHTML = "";
                     response.json().then(function(res){
                         let donations = res;
-                        for(let i = 0; i < donations.length; i++){
+                        for(let i = donations.length - 1; i >= 0; i--){
                             let currDonation = donations[i];
                             let tempName = currDonation.name;
                             let tempAmount = currDonation.amount;
