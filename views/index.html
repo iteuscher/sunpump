@@ -523,17 +523,23 @@
 
                             <div class="col">
                                     <div class="vertical-center" >
+                                        <a href="https://www.usaid.gov/" target="_blank">
                                         <img class="image-big vertical-center-img" src="../assets/img/usaidlogo.png" alt="USAID Logo">
+                                        </a>
                                     </div>
                             </div>
                             <div class="col">
                                     <div class="vertical-center">
+                                        <a href="http://kickstart.org/" target="_blank">
                                         <img class="image-bigger vertical-center-img" src="../assets/img/kickstartlogo.png" alt="Kickstart Logo">
+                                        </a>
                                     </div>
                             </div>
                             <div class="col">
                                     <div class="vertical-center">
+                                        <a href="http://www.encaptech.com/" target="_blank">
                                         <img class="image-full vertical-center-img" src="../assets/img/encaplogo.png" alt="Encap Tech Logo">
+                                        </a>
                                     </div>
                             </div>
                     </div>
@@ -551,18 +557,101 @@
                         <p>If you have questions, feedback, know somebody who might benefit from our pump, please contact us!
                          </p>
 
+                        <div id="contactFormSuccessAlert" style="display:none;" class="alert alert-success" role="alert">
+                            <div class="container">
+                                <div class="alert-icon">
+                                    <i class="now-ui-icons ui-2_like"></i>
+                                </div>
+                                <strong>Contact Form Submitted!</strong> Your message has been sent to Sun Pump. You'll recive a confirmation email soon.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">
+                                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="contactFormFailAlert" style="display:none;" class="alert alert-danger" role="alert">
+                            <div class="container">
+                                <div class="alert-icon">
+                                    <i class="now-ui-icons ui-1_bell-53"></i>
+                                </div>
+                                <strong>Form failed to submit!</strong> Try submitting the form again or email contact@sunpump.org for help.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">
+                                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-md-8">
+                                    <form id="contactForm" class="contactForm form" role="form">
+                                         <!-- action="/contact" method="POST" -->
+                                        <div class="form-group">
+                                            <label class="contact-form-label" for="name">Your Name *</label>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name *" tabindex="1" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="contact-form-label" for="email">Your Email *</label>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email *" tabindex="2" required>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label class="contact-form-label" for="subject">Subject </label>
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
+                                        </div> -->
+                                        <div class="form-group">
+                                            <label class="contact-form-label" for="message">Message *</label>
+                                            <textarea rows="6" cols="50" name="message" class="form-control" id="message" placeholder="Message *" tabindex="3" required></textarea>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-hover btn-primary btn-start-order">Send Message</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <script>
+                                const contactForm = document.querySelector('#contactForm');
+                                    contactForm.addEventListener('submit', (e) => {
+                                        e.preventDefault();
+                                        let name = contactForm.querySelector('#name').value
+                                        let email = contactForm.querySelector('#email').value
+                                        let message = contactForm.querySelector('#message').value
+                                        post('/contact', { name, email, message })
+
+                                        contactForm.reset();  // Reset all form data
+
+                                        document.querySelector('#contactFormSuccessAlert').style.display = "flex";
+                                       
+                                        // if something went wrong...
+                                        //document.querySelector('#contactFormFailAlert').style.display = "flex";
+                                        
+                                        return false; // Prevent page refresh                               
+                                    });
+
+                                function post(path, data) {
+                                    return window.fetch(path, {
+                                        method: 'POST',
+                                        headers: {
+                                            'Accept': 'application/json',
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify(data)
+                                    });
+                                }
+                            </script>
+
+                            <div class="col-sm-1"></div>
 
 
-                        <form action="/contact" id="contact-form" method="post" role="form">
-
-                                <header>
-                                    <!-- <h2>Example Responsive Form</h2> -->
-                                </header>
+                        <!-- <form action="/contact" id="contact-form" method="post" role="form">
 
                                 <div>
                                     <label class="desc" id="title1" for="name">Full Name</label>
                                     <div>
-                                        <input id="name" name="name" type="text" placeholder="Your Name" required="required" class="field text fn" value="" size="8" tabindex="1">
+                                        <input id="name" name="name" type="text" placeholder=" Your Name" required="required" class="field text fn" value="" size="8" tabindex="1">
                                     </div>
                                 </div>
 
@@ -571,7 +660,7 @@
                                         Email
                                     </label>
                                     <div>
-                                        <input id="email" name="email" type="email" placeholder="Your email" required="required" spellcheck="false" value="" maxlength="255" tabindex="3">
+                                        <input id="email" name="email" type="email" placeholder=" Your email" required="required" spellcheck="false" value="" maxlength="255" tabindex="3">
                                     </div>
                                 </div>
 
@@ -581,113 +670,16 @@
                                     </label>
 
                                     <div>
-                                        <textarea id="message" name="message" placeholder="Enter your message here" spellcheck="true" rows="6" cols="50" tabindex="4"></textarea>
+                                        <textarea id="message" name="message" placeholder=" Enter your message here" spellcheck="true" rows="6" cols="50" tabindex="4"></textarea>
                                     </div>
                                 </div>
 
+                                <div>
                                     <div>
-                                        <div>
-                                            <input id="saveForm" name="saveForm" type="submit" value="Submit">
-                                        </div>
+                                        <input id="saveForm" name="saveForm" type="submit" value="Submit">
                                     </div>
-                        </form>
-
-                        <style>
-                                form header {
-                                margin: 0 0 20px 0;
-                                }
-                                form header div {
-                                font-size: 90%;
-                                color: #999;
-                                }
-                                form header h2 {
-                                margin: 0 0 5px 0;
-                                }
-                                form > div {
-                                clear: both;
-                                overflow: hidden;
-                                padding: 1px;
-                                margin: 0 0 10px 0;
-                                }
-                                form > div > fieldset > div > div {
-                                margin: 0 0 5px 0;
-                                }
-                                form > div > label,
-                                legend {
-                                    width: 25%;
-                                float: left;
-                                padding-right: 10px;
-                                }
-                                form > div > div,
-                                form > div > fieldset > div {
-                                width: 75%;
-                                float: right;
-                                }
-                                form > div > fieldset label {
-                                    font-size: 90%;
-                                }
-                                fieldset {
-                                    border: 0;
-                                padding: 0;
-                                }
-
-                                input[type=text],
-                                input[type=email],
-                                input[type=url],
-                                input[type=password],
-                                textarea {
-                                    width: 70%;
-                                border-top: 1px solid #ccc;
-                                border-left: 1px solid #ccc;
-                                border-right: 1px solid #eee;
-                                border-bottom: 1px solid #eee;
-                                }
-                                input[type=text],
-                                input[type=email],
-                                input[type=url],
-                                input[type=password] {
-                                width: 50%;
-                                }
-                                input[type=text]:focus,
-                                input[type=email]:focus,
-                                input[type=url]:focus,
-                                input[type=password]:focus,
-                                textarea:focus {
-                                outline: 0;
-                                border-color: #4697e4;
-                                }
-
-                                @media (max-width: 600px) {
-                                form > div {
-                                    margin: 0 0 15px 0;
-                                }
-                                form > div > label,
-                                legend {
-                                    width: 90%;
-                                    float: none;
-                                    margin: 0 0 5px 0;
-                                }
-                                form > div > div,
-                                form > div > fieldset > div {
-                                    width: 90%;
-                                    float: none;
-                                }
-                                input[type=text],
-                                input[type=email],
-                                input[type=url],
-                                input[type=password],
-                                textarea,
-                                select {
-                                    width: 90%;
-                                }
-                                }
-                                @media (min-width: 1200px) {
-                                form > div > label,
-                                    legend {
-                                    text-align: right;
-                                }
-                                }
-                        </style>
+                                </div>
+                        </form> -->
 
                         <!-- <div class="email">
                             <a href="mailto:info@sunpump.org">
@@ -707,12 +699,12 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="./index.html">
+                            <a href="./">
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="./donate.html">
+                            <a href="./donate">
                                 Donate
                             </a>
                         </li>
@@ -757,6 +749,51 @@
 
     <!-- Plugin for smooth scrolling JavaScript -->
     <script src="../assets/js/plugins/jquery.easing.js" type="text/javascript"></script>
+
+    <!-- Contact Form JavaScript/jQuery -->
+    <script>
+        $(document).ready(function () {
+            // Test for placeholder support
+            $.support.placeholder = (function () {
+                var i = document.createElement('input');
+                return 'placeholder' in i;
+            })();
+
+            // Hide labels by default if placeholders are supported
+            if ($.support.placeholder) {
+                $('.contact-form-label').each(function () {
+                    $(this).addClass('js-hide-label');
+                });
+
+                // Code for adding/removing classes here
+                $('.form-group').find('input, textarea').on('keyup blur focus', function (e) {
+
+                    // Cache our selectors
+                    var $this = $(this),
+                        $parent = $this.parent().find("label");
+
+                    switch (e.type) {
+                        case 'keyup': {
+                            $parent.toggleClass('js-hide-label', $this.val() == '');
+                        } break;
+                        case 'blur': {
+                            if ($this.val() == '') {
+                                $parent.addClass('js-hide-label');
+                            } else {
+                                $parent.removeClass('js-hide-label').addClass('js-unhighlight-label');
+                            }
+                        } break;
+                        case 'focus': {
+                            if ($this.val() !== '') {
+                                $parent.removeClass('js-unhighlight-label');
+                            }
+                        } break;
+                        default: break;
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- Plugin for headline slide in JavaScript -->
     <script src="../assets/js/plugins/headline-slide.js"></script>

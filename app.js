@@ -1,3 +1,4 @@
+//Requires
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,7 +7,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fetch = require("node-fetch");
 var request = require("request");
+var nodeMailer = require('nodemailer')
 
+
+//Routes
 var index = require('./routes/index');
 var about = require('./routes/about');
 var pump = require('./routes/pump');
@@ -19,50 +23,47 @@ var io = require('socket.io')(http);
 // Set your secret key: remember to change this to your live secret key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 var stripe = require("stripe")("sk_test_UbVI1mTyg3mEoHww5x21v1Cp");
-
-
+//Port
 const PORT = process.env.PORT || 3001;
-
-const nodemailer = require('nodemailer');
-
-let totalRaised = 0;
-
-http.listen(PORT, function() {
-    console.log('listening on *:3001');
- });
-
- io.on('connection', function(socket) {
-  //socket.emit("setAmount", {amount: totalRaised});
-
-  console.log('A user connected');
-
-  socket.on("clientDonation", function(data){
-      console.log(data.name + " donated $" + data.amount);
-      totalRaised += (Number.parseFloat(data.amount));
-      socket.broadcast.emit("donation",data);
-  })
-
-  //Whenever someone disconnects this piece of code executed
-  socket.on('disconnect', function () {
-      console.log('A user disconnected');
-  });
+http.listen(PORT, function () {
+  console.log('listening on *:3001');
 });
+
+
+//Donor Box connection code
+  let totalRaised = 0;
+
+  io.on('connection', function(socket) {
+    //socket.emit("setAmount", {amount: totalRaised});
+
+    console.log('A user connected');
+
+    socket.on("clientDonation", function(data){
+        console.log(data.name + " donated $" + data.amount);
+        totalRaised += (Number.parseFloat(data.amount));
+        socket.broadcast.emit("donation",data);
+    })
+
+    //Whenever someone disconnects this piece of code executed
+    socket.on('disconnect', function () {
+        console.log('A user disconnected');
+    });
+  });
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
+//Server rendering setup
 app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-
-// app.use(express.static(path.join(__dirname, 'public')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
+//Paths
 app.use('/', index);
 app.use('/about', about);
 app.use('/pump', pump);
@@ -71,28 +72,46 @@ app.use('/donate', donate);
 
 // POST route from contact form
 app.post('/contact', function (req, res) {
+  
+  //send success
+  console.log('onto the app.js nodemailer stuff!')
+  res.sendStatus(200);
+
   let mailOpts, smtpTrans;
-  smtpTrans = nodemailer.createTransport({
+  smtpTrans = nodeMailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: {
-      user: 'sunpumptest1@gmail.com',
-      pass: 'temp_email_pass_1'
+      user: 'sun.pump.email.system@gmail.com',
+      pass: 'murphy123andenc@p7878'
     }
   });
   mailOpts = {
     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-    to: 'sunpumptest1@gmail.com',
-    subject: 'New message from Sun Pump contact form',
-    text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+    to: 'sun.pump.email.system@gmail.com, contact@sunpump.org',
+    subject: `New message from ${req.body.name} via the Sun Pump contact form`,
+    text: `New message from the Sun Pump contact form ( www.sunpump.org/#contact ).
+
+    Name: ${req.body.name} 
+    Email: ${req.body.email} 
+    Message: 
+      ${req.body.message}
+      
+
+       ** This is an automated email sent by the Sun Pump Express Node.js Server with NodeMailer ** `
   };
   smtpTrans.sendMail(mailOpts, function (error, response) {
     if (error) {
-      res.render('contact-failure');
+      return 
+      console.log('ERROR sending contact form: ', error)
     }
     else {
-      res.render('contact-success');
+      //res.render('contact-success');
+      console.log('Welcome email sent to: ' + req.body.email);
+      res.sendFile('index.html');
+      return 
+      console.log('contact form message sent successfully!')
     }
   });
 });
@@ -172,8 +191,7 @@ function updateTotalRaised(){
   }
   totalRaised = tempTotal;
 }
-
-
+//end of Donor Box
 
 
 // catch 404 and forward to error handler
@@ -182,6 +200,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -193,5 +212,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
