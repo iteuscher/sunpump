@@ -44,7 +44,9 @@
 <body class="index-page sidebar-collapse">
 
     <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="600">
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+                <!-- navbar-transparent " color-on-scroll="600" -->
+
             <div class="container ">
                 <div class="navbar-translate">
                     <a href="#top">
@@ -71,11 +73,11 @@
                                 <p>Buy a Pump</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link  " href="#ourwork">
                                 <p>Our Work</p>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="#ourpartners">
                                 <p>Our Partners</p>
@@ -129,11 +131,11 @@
             </div>
 
         </div>
+
         <div class="main">
 
-
             <div class="spacer"></div>
-
+            
 
             <div id="thepump" class="section section-basic">
                 <div class="container center">
@@ -285,7 +287,7 @@
 
                 <div class="container-fluid images-w-text">
                     <!-- https://css-tricks.com/design-considerations-text-images/ -->
-                    <div class="row">
+                    <div class="row" style="max-width: 150% !important">
                         <div class="col-lg-6">
                             <div class="image-w-text">
                                 <img src="../assets/img/16x10/farm1.jpg" alt="Farm field">
@@ -318,6 +320,7 @@
 
             </div> <!-- end of the banner section -->
 
+            <div class="spacer-medium"> </div>
 
             <div id="buy" class="section section-basic">
                 <div class="container center">
@@ -329,15 +332,18 @@
                     </div>
                 </div>
             </div>
-
-
-            <div class="spacer-medium"> </div>
-
+    
 
             <div id="ourwork" class="section section-basic">
                 <div class="container">
 
-                    <h2>Our Work</h2>
+                    <div class="center" style="max-width: 80%;">
+                    <h5>
+                        We sell our pumps worldwide <b>direct to customer</b> and through our <b>distrubution partners</b>
+                        in certain locations. See the map below for our current programs.
+                    </h5>
+                    </div>
+                            <div class="spacer-medium"> </div>
 
                     <div class="row">
                         <div class="col-md-9">
@@ -495,7 +501,7 @@
                         <div class="col">
 
                             <div class="map-legend" style="z-index: 0; top: 45px; right: 0px;">
-                                <h5 class="map-legend-headline">Map Legend</h5>
+                                <!-- <h5 class="map-legend-headline">Map Legend</h5> -->
 
                                 <div class="map-legend-color">
                                     <div class="ts-map-legend-color-green"></div>
@@ -509,8 +515,8 @@
 
                                 <div class="spacer-small"></div>
 
-                                <h5 class="map-legend-headline">Other Project Areas</h5>
-                                <p>Nepal, Nicaragua</p>
+                                <b><u>Other Project Areas</u></b>
+                                <p>&nbsp;&nbsp;Nepal, Nicaragua</p>
 
 
                             </div>
@@ -520,7 +526,7 @@
                 </div>
             </div>
 
-            <div class="spacer-medium"></div>
+            <div class="spacer"></div>
 
             <div id="ourpartners" class="section section-basic">
                 <div class="container">

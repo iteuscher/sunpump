@@ -37,6 +37,33 @@ Colors
 ::selection{
 } */
 
+.row {
+    max-width: 100%;
+}
+
+#navbar {
+    /* background: #55acee; 
+    background: -webkit-linear-gradient(to right, #55acee, #56CCF2); 
+    background: linear-gradient(to right, #55acee, #56CCF2); */
+
+    background: #56CCF2;  
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
+    background: linear-gradient(to right, #2F80ED, #56CCF2); 
+
+    box-shadow: none;
+}
+
+.blue {
+    color: #2196f3;
+}
+
+.box-w-icon {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
 #header-container {
     display: flex;
     justify-content: center;
@@ -175,6 +202,8 @@ fill: rgb(180, 180, 180) !important;
 
 
 .map-legend {
+    max-width: 70%;
+    margin: 0 auto;
   background: #FFF;
   padding: 0px;
   line-height: 16px;

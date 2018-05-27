@@ -10,7 +10,7 @@
     <!-- Use the latest (edge) version of IE rendering engine -->
     <meta name="x-apple-disable-message-reformatting">
     <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title> Welcome to Lux </title>
+    <title> Sun Pump message received! </title>
     <!-- The title tag shows in email notifications, like Android 4.4. -->
     <!-- Web Font / @font-face : BEGIN -->
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
@@ -165,10 +165,10 @@
 </head>
 
 <body width="100%" bgcolor="#222222" style="margin: 0; mso-line-height-rule: exactly;">
-    <center style="width: 100%; background: #222222; text-align: left;">
+    <center style="width: 100%; background: rgb(36, 104, 192); text-align: left;">
         <!-- Visually Hidden Preheader Text : BEGIN -->
         <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        Thank you for joining Lux! You can now sign in to your account. </div>
+        Thank you for sending a message to Sun Pump! </div>
         <!-- Visually Hidden Preheader Text : END -->
         <!-- Set the email width. Defined in two places: 1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px. 2. MSO tags for Desktop Windows Outlook enforce a 600px width. -->
         <div style="max-width: 600px; margin: auto;" class="email-container">
@@ -189,7 +189,7 @@
                     <td bgcolor="#ffffff" align="center">
                         <br>
                         <br>
-                        <img src="https://i.imgur.com/tiPG1bm.png" width="200" height="" alt="alt_text" border="0" align="center"
+                        <img src="https://i.imgur.com/QGGg2B4.png" width="200" height="" alt="alt_text" border="0" align="center"
                             style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555; margin: auto;"
                             class="g-img"> </td>
                 </tr>
@@ -200,20 +200,32 @@
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tr>
                                 <td style="padding: 30px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555;">
-                                    <h2 style="margin: 0 0 10px 0; text-align: center; font-family: sans-serif; font-size: 22px; line-height: 130%; color: #333333; font-weight: bold;">Thank you for joining Lux, ' + req.body.firstname + ' ' + req.body.lastname + '!</h2>
+                                    <h2 style="margin: 0 0 10px 0; text-align: center; font-family: sans-serif; font-size: 22px; line-height: 130%; color: #333333; font-weight: bold;">
+                                     Thank you for contacting Sun Pump, ' + req.body.name + '!</h2>
                                     <br>
-                                    <p style="margin: 0; text-align: center; ">We&apos;re glad to have you as part of our community. In case you have any questions,
-                                        feel free to reach out to us by responding to this email or by sending a note to
-                                        lux.emailer.system@gmail.com.</p>
+                                    <p style="margin: 0; text-align: center; "> 
+                                         We&apos;ve received your message and will respond to you shortly.
+                                    
+                                    </p>
+                                    <br>
+                                    <p style="margin: 0; text-align: center; ">
+                                    For your information, your message was:
+                                    <br> ' + req.body.message + '
+                                    </p>
+                                    <br>
+                                    <p style="margin: 0; text-align: center; ">
+                                        If you have additional questions, feel free to reach out to us 
+                                        by responding to this email or by sending a note to
+                                        contact@sunpump.org.
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555;">
-                                    <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 125%; color: #333333; text-align: center;">You can now sign in to your Lux account by entering ' + req.body.email + ' and your password.</h2>
-                                    <br>
+                                    <!-- <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 125%; color: #333333; text-align: center;">You can now sign in to your Lux account by entering ' + req.body.email + ' and your password.</h2>
+                                    <br> -->
                                     <!-- Button : BEGIN -->
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center"
-                                        style="margin: auto;">
+                                    <!-- <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto;">
                                         <tr>
                                             <td style="border-radius: 3px; background: #222222; text-align: center;" class="button-td">
                                                 <a href="localhost:3000/#signin" style="background: #222222; border: 15px solid #222222; font-family: sans-serif; font-size: 13px; line-height: 110%; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;"
@@ -222,11 +234,10 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                    </table>
+                                    </table> -->
                                     <!-- Button : END -->
-                                    <br>
                                     <p style="text-align:center"> Thanks,
-                                        <br> The Lux Team</p>
+                                        <br> The Sun Pump Team</p>
                                 </td>
                             </tr>
                         </table>
@@ -245,18 +256,17 @@
             </table>
             <!-- Email Body : END -->
             <!-- Email Footer : BEGIN -->
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px; font-family: sans-serif; color: #888888; font-size: 12px; line-height: 140%;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px; font-family: sans-serif; color: #f3f3f3; font-size: 12px; line-height: 140%;">
                 <tr>
-                    <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;"
+                    <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #f3f3f3;"
                         class="x-gmail-data-detectors">
-                        <a href="localhost:3000/views/welcome-email.html" style="color: #cccccc; text-decoration: underline; font-weight: bold;">View as a Web Page</a>
+                        <a href="http://www.sunpump.org/other/confirmation-email.html" style="color: #f3f3f3; text-decoration: underline; font-weight: bold;">View as a Web Page</a>
                         <br>
-                        <!-- Lux Developers -->
                         <br> Alameda, CA, 94501 USA
-                        <br> lux.emailer.system@gmail.com
+                        <br> contact@sunpump.org
                         <br>
                         <br>
-                        <unsubscribe style="color: #888888; text-decoration: underline;">Unsubscribe</unsubscribe>
+                        <!-- <unsubscribe style="color: #888888; text-decoration: underline;">Unsubscribe</unsubscribe> -->
                     </td>
                 </tr>
             </table>
