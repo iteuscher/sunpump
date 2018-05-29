@@ -436,12 +436,26 @@ fill: rgb(180, 180, 180) !important;
     vertical-align: middle;
     -webkit-filter: grayscale(0.1);
     filter: grayscale(0.1);
+     filter: brightness(90%);
+}
+
+#image-header{
+     filter: brightness(75%);
+     -webkit-filter: brightness(75%);
 }
 
 .images-w-text .col-lg-6 {
     padding: 0;
     margin: 0 !important;
     /* max-height: 475px; */
+}
+
+.images-w-text h1 {
+  text-shadow: 1.2px 1.2px 1.2px #000;
+}
+
+.images-w-text h2 {
+  text-shadow: 1.2px 1.2px 1.2px #000;
 }
 
 .images-w-text p {
@@ -6557,7 +6571,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .index-page .page-header {
-    height: 110vh;
+    height: 100vh;
 }
 
 .index-page .page-header .container>.content-center {
