@@ -8,7 +8,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        
+
         gtag('config', 'UA-119414241-1');
     </script>    
     <meta name="google-site-verification" content="Rq4gI9aRzxCOYTko8mdY__EpunRzSc9avQDr7zq4OsY" />
@@ -137,7 +137,7 @@
         <div class="main">
 
             <div class="spacer"></div>
-            
+
 
             <div id="thepump" class="section section-basic">
                 <div class="container center">
@@ -327,14 +327,18 @@
             <div id="buy" class="section section-basic">
                 <div class="container center">
                     <div class="center">
-                        <a id="buypump" class="btn btn-lg btn-primary btn-hover">
-                            Buy a Pump Now!
+                        <a id="buyPumpOption1" class="btn btn-lg btn-primary btn-hover">
+                            Buy a Pump Now 1!
+                            <i class="now-ui-icons shopping_cart-simple"></i>
+                        </a>
+                        <a id="buyPumpOption2" class="btn btn-lg btn-primary btn-hover">
+                            Buy a Pump Now 2!
                             <i class="now-ui-icons shopping_cart-simple"></i>
                         </a>
                     </div>
                 </div>
             </div>
-    
+
 
             <div id="ourwork" class="section section-basic">
                 <div class="container">
@@ -642,11 +646,11 @@
                                         contactForm.reset();  // Reset all form data
 
                                         document.querySelector('#contactFormSuccessAlert').style.display = "flex";
-                                       
+
                                         // if something went wrong...
                                         //document.querySelector('#contactFormFailAlert').style.display = "flex";
-                                        
-                                        return false; // Prevent page refresh                               
+
+                                        return false; // Prevent page refresh
                                     });
 
                                 function post(path, data) {
@@ -784,7 +788,7 @@
     <script>
     //Stripe checkout to buy a pump
 
-        var handler = StripeCheckout.configure({
+        var handler1 = StripeCheckout.configure({
             key: 'pk_test_P1lN2vw2KxXgACvxWaOnpH5m',
             image: '../assets/favicons/android-chrome-512x512.png',
             locale: 'auto',
@@ -793,33 +797,80 @@
             zipCode: true,
             token: function (token) {
 
-              let tokenid = {id: token.id}
+              let tokenInfo1 = {
+                id: token.id,
+                cost: 9000,
+              }
 
                 // You can access the token ID with `token.id`.
                 // Get the token ID to your server-side code for use.
                 fetch('/purchase', {
                   method: 'post',
                   headers: {"Content-Type": "application/json"},
-                  body: JSON.stringify(tokenid),
+                  body: JSON.stringify(tokenInfo1),
                 })
             }
         });
 
-        document.getElementById('buypump').addEventListener('click', function (e) {
+        document.getElementById('buyPumpOption1').addEventListener('click', function (e) {
             // Open Checkout with further options:
-            handler.open({
+            handler1.open({
                 name: 'Sun Pump',
                 description: 'Solar Water Pump',
                 amount: 9000
-
             });
+
             e.preventDefault();
         });
 
         // Close Checkout on page navigation:
         window.addEventListener('popstate', function () {
-            handler.close();
+            handler1.close();
         });
+
+    </script>
+
+    <script>
+
+      var handler2 = StripeCheckout.configure({
+          key: 'pk_test_P1lN2vw2KxXgACvxWaOnpH5m',
+          image: '../assets/favicons/android-chrome-512x512.png',
+          locale: 'auto',
+          shippingAddress: true,
+          billingAddress: true,
+          zipCode: true,
+          token: function (token) {
+
+            let tokenInfo1 = {
+              id: token.id,
+              cost: 7000,
+            }
+
+              // You can access the token ID with `token.id`.
+              // Get the token ID to your server-side code for use.
+              fetch('/purchase', {
+                method: 'post',
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(tokenInfo1),
+              })
+          }
+      });
+
+      document.getElementById('buyPumpOption2').addEventListener('click', function (e) {
+          // Open Checkout with further options:
+          handler2.open({
+              name: 'Sun Pump',
+              description: 'Solar Water Pump',
+              amount: 7000
+          });
+
+          e.preventDefault();
+      });
+
+      // Close Checkout on page navigation:
+      window.addEventListener('popstate', function () {
+          handler2.close();
+      });
 
     </script>
 
