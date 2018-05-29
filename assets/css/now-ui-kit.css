@@ -1,7 +1,7 @@
 /*!
 
 ===============================
-Sun Pump CSS Website Style 
+Sun Pump CSS Website Style
 * By Isaac Teuscher
 ===============================
 
@@ -25,15 +25,15 @@ designed from
 
 
 
- /* 
+ /*
 ===============================
-Colors          
+Colors
     #55acee  -- twitter light blue
 
 ===============================
 */
 
-/* 
+/*
 ::selection{
 } */
 
@@ -42,13 +42,13 @@ Colors
 }
 
 #navbar {
-    /* background: #55acee; 
-    background: -webkit-linear-gradient(to right, #55acee, #56CCF2); 
+    /* background: #55acee;
+    background: -webkit-linear-gradient(to right, #55acee, #56CCF2);
     background: linear-gradient(to right, #55acee, #56CCF2); */
 
-    background: #56CCF2;  
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
-    background: linear-gradient(to right, #2F80ED, #56CCF2); 
+    background: #56CCF2;
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
 
     box-shadow: none;
 }
@@ -76,7 +76,7 @@ Colors
 }
 
 .bannerItem {
-font-size: 1.5em; 
+font-size: 1.5em;
 padding-bottom: 1.5em;
 width:50%;
 }
@@ -85,6 +85,22 @@ width:50%;
     list-style: none;
     padding-left:0;
     display: flex;
+}
+
+.pumpinfo-table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+}
+
+.pumpinfo-row:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.pumpinfo-item {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
 .spacer-small {
@@ -209,18 +225,18 @@ fill: rgb(180, 180, 180) !important;
   line-height: 16px;
   margin: 14px;
   font-size: 16px;
-  font-family: Arial, sans-serif; 
-  overflow: hidden; 
-  text-align: left; 
-  color: rgb(86, 86, 86); 
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  text-align: left;
+  color: rgb(86, 86, 86);
   /* font-family: Roboto,Arial,sans-serif;  */
-  -moz-user-select: none; 
-  user-select: none; 
-  background-color: rgb(255, 255, 255); 
-  padding: 8px; 
-  border-radius: 2px; 
+  -moz-user-select: none;
+  user-select: none;
+  background-color: rgb(255, 255, 255);
+  padding: 8px;
+  border-radius: 2px;
   /* background-clip: padding-box;  */
-  box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.3);
   border-left: 0px none;
 }
 
@@ -258,7 +274,7 @@ fill: rgb(180, 180, 180) !important;
     border-radius: 15px;
     margin-right: 6px;
     vertical-align: middle;          /* vertical alignment of the inline element */
-    
+
 }
 
 .ts-map-legend-color-green {
@@ -269,16 +285,16 @@ fill: rgb(180, 180, 180) !important;
     border-radius: 15px;
     margin-right: 6px;
     vertical-align: middle;          /* vertical alignment of the inline element */
-    
+
 }
 
 
 
 .donation-bar{
     width:0%;
-    height: 4ex; 
-    display: flex; 
-    flex-direction: column; 
+    height: 4ex;
+    display: flex;
+    flex-direction: column;
     justify-content: center
 }
 
@@ -289,7 +305,7 @@ fill: rgb(180, 180, 180) !important;
 }
 
 #messages {
-    overflow: scroll; 
+    overflow: scroll;
     height: 20em;
     list-style: none;
     text-align: center !important;
@@ -416,7 +432,7 @@ fill: rgb(180, 180, 180) !important;
     white-space: nowrap;
     display: inline-block;
     line-height: 120px;
-} 
+}
 
 .vertical-center .vertical-center-img {
     vertical-align: middle;
@@ -489,10 +505,10 @@ textarea {
 	border-color: #5e9bfc;
 }
 .js-hide-label {
-	opacity: 0; 	
+	opacity: 0;
 }
 .js-unhighlight-label {
-	color: #999 
+	color: #999
 }
 .btn-start-order {
 	background: 0 0 #ffffff;
@@ -615,7 +631,7 @@ textarea {
 
 
 /* bubble stat from water.org */
-            
+
         .bubble-stat {
             display: flex;
             align-items: center;
@@ -684,7 +700,7 @@ textarea {
             }
             .bubble-stat__text {
                 font-size: 1.2rem;
-                
+
             }
         }
 
@@ -695,7 +711,7 @@ textarea {
 .banner {
         /* https://uigradients.com/#BlueSkies */
     background: #55acee;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #55acee, #56CCF2); 
+    background: -webkit-linear-gradient(to right, #55acee, #56CCF2);
     background: linear-gradient(to right, #55acee, #56CCF2);
     background-size: cover;
     background-position: center center;
@@ -727,7 +743,7 @@ textarea {
     margin: 0 auto;
     text-align: center;
     padding-bottom: 1.8ex;
-    }      
+    }
 
 @media only screen and (min-width: 500px) {
     .banner-list li {
@@ -791,7 +807,7 @@ textarea {
 .nav-link {
     text-align: center;
 }
-.btn-neutral { 
+.btn-neutral {
     font-weight: 1000;
 }
 
@@ -806,7 +822,7 @@ textarea {
         padding: 2em auto;
         /* background-color: greenyellow; */
         }
-        
+
         @media only screen and (min-width: 768px) {
         .cd-intro {
             padding: 7em auto;
@@ -871,9 +887,9 @@ textarea {
         }
 
 
-        /* -------------------------------- 
+        /* --------------------------------
 
-        xslide 
+        xslide
 
         -------------------------------- */
         .cd-headline.slide span {
@@ -1049,7 +1065,7 @@ textarea {
             height: 1em;
             margin-right: .5em;
             margin-bottom: .2em;
-                
+
         }
 
         .resp-sharing-button__icon svg {
@@ -1252,7 +1268,7 @@ textarea {
 
 
     /* Arrow Button */
-        
+
         .arrow-button {
         background: #55acee;
         border: none;
@@ -1290,7 +1306,7 @@ textarea {
             padding: 1rem 1.7rem;
         }
         }
-        
+
         .arrow-button:hover {
         background: #55acee;
         border-color: #55acee;
@@ -3641,7 +3657,7 @@ fieldset[disabled] .btn-link.active {
 
 
     /* because I don't like the UI Kit form css */
-               /* 
+               /*
                 .form-control::-moz-placeholder {
                     color: #DDDDDD;
                     opacity: 1;
@@ -3977,7 +3993,7 @@ fieldset[disabled] .btn-link.active {
                 .input-group-btn:last-child>.btn {
                     margin-left: 0;
                 } */
-                /* 
+                /*
                 textarea.form-control {
                     max-width: 100%;
                     padding: 10px 10px 0 0;
@@ -3994,7 +4010,7 @@ fieldset[disabled] .btn-link.active {
                     border-top: none;
                     border-right: none;
                 } */
-                /* 
+                /*
                 .has-success.form-group .form-control,
                 .has-success.form-group.form-group-no-border .form-control,
                 .has-danger.form-group .form-control,

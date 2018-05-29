@@ -6,6 +6,10 @@ $('a[href*="#"]')
     .not('[href="#"]')
     .not('[href="#0"]')
     .not('[href="#carouselExampleIndicators"]')
+    .not('[href="#nav-description-1"]')
+    .not('[href="#nav-details-1]"')
+    .not('[href="#nav-features-1"]')
+
     .click(function (event) {
         // On-page links
         if (
