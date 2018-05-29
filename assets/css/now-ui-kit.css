@@ -4224,6 +4224,12 @@ fieldset[disabled] .btn-link.active {
     margin-top: 0;
 }
 
+#progress-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .progress-container {
     position: relative;
 }
@@ -6587,7 +6593,19 @@ Created using IcoMoon - icomoon.io
 }
 
 .index-page .page-header {
+<<<<<<< Updated upstream
     height: 100vh;
+=======
+    height: 90vh;
+}
+
+.page-header-donate {
+    height: 75vh !important;
+}
+
+.donate-spacer {
+    padding-top: 10vh !important;
+>>>>>>> Stashed changes
 }
 
 .index-page .page-header .container>.content-center {

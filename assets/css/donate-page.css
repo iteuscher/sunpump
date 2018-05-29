@@ -1,0 +1,39 @@
+.progress-bar-vertical {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    width: 50px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    background-color:grey;
+  }
+  
+  .progress-bar-vertical .progress-bar {
+    width: 100%;
+    height: 0;
+  }
+  .progress-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  #total-progress-value {
+      font-size: 1.5em;
+      font-weight: bolder;
+  }
+
+  #donation-section {
+    margin-left: 20px;
+    outline: 1px solid black;
+    display: flex;
+  }
+
+  .icon-box {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 50px;
+  }
