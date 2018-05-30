@@ -2,14 +2,18 @@
 
 // Select all links with hashes
 $('a[href*="#"]')
+
+
     // Remove links that don't actually link to anything
     .not('[href="#"]')
     .not('[href="#0"]')
     .not('[href="#carouselExampleIndicators"]')
     .not('[href="#nav-description-1"]')
-    .not('[href="#nav-details-1]"')
+    .not('[href="#nav-details-1"]')
     .not('[href="#nav-features-1"]')
-
+    .not('[href="#nav-description-2"]')
+    .not('[href="#nav-details-2"]')
+    .not('[href="#nav-features-2"]')
     .click(function (event) {
         // On-page links
         if (
