@@ -65,8 +65,8 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 //Paths
 app.use('/', index);
-app.use('/about', about);
-app.use('/pump', pump);
+// app.use('/about', about);
+// app.use('/pump', pump);
 app.use('/donate', donate);
 
 

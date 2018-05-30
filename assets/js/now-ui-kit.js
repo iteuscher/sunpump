@@ -104,6 +104,12 @@ $(window).on('resize', function() {
     nowuiKit.initNavbarImage();
 });
 
+$(document).on('click', '.navbar-collapse.in', function (e) {
+    if ($(e.target).is('a:not(".dropdown-toggle")')) {
+        $(this).collapse('hide');
+    }
+});
+
 $(document).on('click', '.navbar-toggler', function() {
     $toggle = $(this);
 
@@ -114,15 +120,27 @@ $(document).on('click', '.navbar-toggler', function() {
         setTimeout(function() {
             $toggle.removeClass('toggled');
         }, 550);
-    } else {
+    } 
+    
+    else {
         setTimeout(function() {
             $toggle.addClass('toggled');
         }, 580);
         div = '<div id="bodyClick"></div>';
+
         $(div).appendTo('body').click(function() {
             $('html').removeClass('nav-open');
             nowuiKit.misc.navbar_menu_visible = 0;
             setTimeout(function() {
+                $toggle.removeClass('toggled');
+                $('#bodyClick').remove();
+            }, 550);
+        });
+
+        $('.nav-link').click(function () {     
+            $('html').removeClass('nav-open');
+            nowuiKit.misc.navbar_menu_visible = 0;
+            setTimeout(function () {
                 $toggle.removeClass('toggled');
                 $('#bodyClick').remove();
             }, 550);
@@ -169,53 +187,56 @@ nowuiKit = {
                 .css('background-size', "")
                 .removeClass('has-image');
         }
-    },
-
-    initSliders: function() {
-        // Sliders for demo purpose in refine cards section
-        var slider = document.getElementById('sliderRegular');
-
-        noUiSlider.create(slider, {
-            start: 40,
-            connect: [true, false],
-            range: {
-                min: 0,
-                max: 100
-            }
-        });
-
-        var slider2 = document.getElementById('sliderDouble');
-
-        noUiSlider.create(slider2, {
-            start: [20, 60],
-            connect: true,
-            range: {
-                min: 0,
-                max: 100
-            }
-        });
     }
+    
+    //,
+
+
+    // initSliders: function() {
+    //     // Sliders for demo purpose in refine cards section
+    //     var slider = document.getElementById('sliderRegular');
+
+    //     noUiSlider.create(slider, {
+    //         start: 40,
+    //         connect: [true, false],
+    //         range: {
+    //             min: 0,
+    //             max: 100
+    //         }
+    //     });
+
+    //     var slider2 = document.getElementById('sliderDouble');
+
+    //     noUiSlider.create(slider2, {
+    //         start: [20, 60],
+    //         connect: true,
+    //         range: {
+    //             min: 0,
+    //             max: 100
+    //         }
+    //     });
+    // }
 }
 
 
 var big_image;
 
 // Javascript just for Demo purpose, remove it from your project
-nowuiKitDemo = {
-    checkScrollForParallax: debounce(function() {
-        var current_scroll = $(this).scrollTop();
+// nowuiKitDemo = {
+//     checkScrollForParallax: debounce(function() {
+//         var current_scroll = $(this).scrollTop();
 
-        oVal = ($(window).scrollTop() / 3);
-        big_image.css({
-            'transform': 'translate3d(0,' + oVal + 'px,0)',
-            '-webkit-transform': 'translate3d(0,' + oVal + 'px,0)',
-            '-ms-transform': 'translate3d(0,' + oVal + 'px,0)',
-            '-o-transform': 'translate3d(0,' + oVal + 'px,0)'
-        });
+//         oVal = ($(window).scrollTop() / 3);
+//         big_image.css({
+//             'transform': 'translate3d(0,' + oVal + 'px,0)',
+//             '-webkit-transform': 'translate3d(0,' + oVal + 'px,0)',
+//             '-ms-transform': 'translate3d(0,' + oVal + 'px,0)',
+//             '-o-transform': 'translate3d(0,' + oVal + 'px,0)'
+//         });
 
-    }, 6)
+//     }, 6)
 
-}
+// }
 
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for
