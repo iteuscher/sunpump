@@ -456,8 +456,13 @@ fill: rgb(180, 180, 180) !important;
 }
 
 #image-header{
-     filter: brightness(75%);
-     -webkit-filter: brightness(75%);
+     /* filter: brightness(75%);
+     -webkit-filter: brightness(75%); */
+}
+
+#top {
+    filter: brightness(150%);
+     -webkit-filter: brightness(150%);
 }
 
 .images-w-text .col-lg-6 {
@@ -473,6 +478,7 @@ fill: rgb(180, 180, 180) !important;
 .images-w-text h2 {
   text-shadow: 1.2px 1.2px 1.2px #000;
 }
+
 
 .images-w-text p {
   padding: 2px;
