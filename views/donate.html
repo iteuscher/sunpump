@@ -175,7 +175,7 @@
                             <div class="progress progress-bar-vertical">
                                 <div id="bigProgressBar" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="30" aria-valuemin="0"
                                     aria-valuemax="100" style="height: 50%;">
-                                    <div id="total-progress-value">0%</div>
+                                    <div id="total-progress-percent">0%</div>
                                 </div>
                             </div>
                         </div>
@@ -186,7 +186,7 @@
                                         <path fill="#F44336" d="M34 9c-4.2 0-7.9 2.1-10 5.4C21.9 11.1 18.2 9 14 9 7.4 9 2 14.4 2 21c0 11.9 22 24 22 24s22-12 22-24c0-6.6-5.4-12-12-12z"></path>
                                     </g>
                                 </svg>
-                                <h4 class="header-below-icon" style="font-weight: bold">$150 Raised</h4>
+                                <h4 id="total-progress-value" class="header-below-icon" style="font-weight: bold">$150 Raised</h4>
 
                                 <div class="spacer-medium"></div>
 
@@ -1136,6 +1136,7 @@
             let button = document.getElementById("button");
             let smallBar = document.getElementById("smallProgressBar");
             let bigBar = document.getElementById("bigProgressBar");
+            let bigBarPercent = document.getElementById("total-progress-percent");
             let bigBarValue = document.getElementById("total-progress-value");
             let progressValue = document.getElementById("progress-value");
             let progressHeader = document.getElementById("progress-header");
@@ -1225,14 +1226,15 @@
                 let bigBarPercent = (totalRaised / 150000);
                 console.log(bigBarPercent);
                 bigBar.style.height = (bigBarPercent * 100) + "%";
-                bigBarValue.innerText = round(bigBarPercent *100, 1) + "%";
+                bigBarPercent.innerText = round(bigBarPercent *100, 1) + "%";
+                bigBarValue.innerText = "$" + totalRaised + " Raised!";
 
                 if(bigBarPercent * 100 < 30){
                     //Label should go in the middle
-                    bigBarValue.style.paddingBottom = "50px";
+                    bigBarPercent.style.paddingBottom = "50px";
                 }
                 else{
-                    bigBarValue.style.paddingBottom = "0px";
+                    bigBarPercent.style.paddingBottom = "0px";
                 }
 
 
