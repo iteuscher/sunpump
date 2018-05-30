@@ -261,7 +261,7 @@
                                 <path class="cls-4" d="M19.65,47.84H14.46c-.39,0-.64-.07-.64-.16V46.54c0-.1.25-.16.64-.16h5.19c.39,0,.65.06.65.16v1.14C20.3,47.77,20,47.84,19.65,47.84Z"
                                     transform="translate(-10.73 -0.3)" />
                             </svg>
-                            <h4 class="header-below-icon">1 Pump</h4>
+                            <h4 id="total-pump-number" class="header-below-icon">0 Pump</h4>
 
                             <div class="spacer-medium"></div>
 
@@ -1153,6 +1153,7 @@
             let messageArea = document.getElementById("messageArea");
             let messageList = document.getElementById("messages");
             let counter = document.getElementById("counter");
+            let totalPumpNumber = document.getElementById("total-pump-number");
 
             let totalRaised = 0;
             let count = 0;
@@ -1168,33 +1169,10 @@
                 updateDonationBar(0);
             })
         
-            //OLD BUTTON FUNCTION
-            /**
-             * progressButton.addEventListener("click",function(){
-                let amount = 10;
-                updateDonationBar(amount);
-                let tempName = tempNameInput.value;
-                if(tempName.length == 0){
-                    tempName = "Anonymous";
-                }
-
-                addDonationToList(tempName, amount);
-
-                socket.emit("clientDonation", {name: tempName, amount: amount});
-            });
-            */
+            
 
             populateDonations();
-            //updateServerDonations();
-
-            // function updateServerDonations(){
-            //     fetch("/api/updateDonations").then(function (response){
-            //         populateDonations();
-            //     });
-            // }
-
-            //NEW BUTTON FUNCTION
-            //progressButton.addEventListener("click",updateServerDonations());
+ 
 
             function setTotalRaised(){
                 fetch("/api/amountRaised").then(function(response){
@@ -1231,13 +1209,13 @@
                 totalRaised += Number.parseFloat(amount);
                 console.log(totalRaised);
                 
-                let bigBarPercent = (totalRaised / 150000);
-                console.log(bigBarPercent);
-                bigBar.style.height = (bigBarPercent * 100) + "%";
-                bigBarPercent.innerText = round(bigBarPercent *100, 1) + "%";
+                let bigBarPercentValue = (totalRaised / 150000);
+                console.log(bigBarPercentValue);
+                bigBar.style.height = (bigBarPercentValue * 100) + "%";
+                bigBarPercent.innerText = round(bigBarPercentValue *100, 1) + "%";
                 bigBarValue.innerText = "$" + totalRaised + " Raised!";
 
-                if(bigBarPercent * 100 < 30){
+                if(bigBarPercentValue * 100 < 30){
                     //Label should go in the middle
                     bigBarPercent.style.paddingBottom = "50px";
                 }
@@ -1254,13 +1232,13 @@
                 count = totalRaised / 150;
                 console.log(count);
                 count = Math.floor(count);
-                console.log(count);
+                console.log("THIS IS THE COUNT: " + count);
 
                 if(count == 1){
-                    counter.innerText = count + " Pump Already Donated!";
+                    totalPumpNumber.innerText = count + " Pump";
                 }
                 else{
-                    counter.innerText = count + " Pumps Already Donated!";
+                    totalPumpNumber.innerText = count + " Pumps";
                 }
 
 
