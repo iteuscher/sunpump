@@ -103,14 +103,47 @@
     <!-- End Navbar -->
 
     <div class="wrapper">
-
-        <div class="page-header page-header-donate clear-filter" filter-color="">
-            <!-- look into the filter here -->
-        
-            <div class="page-header-image" data-parallax="true">
-            </div>
-            <div id="top" class="container">
-                <div class="content-center brand donate-spacer">
+            <div class="page-header clear-filter" filter-color=""> 
+ 
+                    <style> 
+                        /* <link rel="stylesheet" href="focuspoint.css"> */ 
+                     
+                        /* !FOCUSED IMAGES */ 
+                     
+                        /*-----------------------------------------*/ 
+                     
+                        .focuspoint { 
+                            position: relative; 
+                            /*Any position but static should work*/ 
+                            overflow: hidden; 
+                        } 
+                     
+                        .focuspoint img { 
+                            position: absolute; 
+                            left: 0; 
+                            top: 0; 
+                            margin: 0; 
+                            display: block; 
+                            /* fill and maintain aspect ratio */ 
+                            width: auto; 
+                            height: auto; 
+                            min-width: 100%; 
+                            min-height: 100%; 
+                            max-height: none; 
+                            max-width: none; 
+                        } 
+                    </style> 
+     
+                <div id="image-header" class="focuspoint container images-w-text" data-focus-x="0.46" data-focus-y="-0.03" data-image-w="1024" data-image-h="768"  
+                    style=" padding: 0 !important; 
+                            width: 100%; 
+                            min-height: 100%; 
+                            max-height: none; 
+                            max-width: none;"> 
+                    <img class="image-w-text" src="../assets/img/farm1.jpg" alt="Farmer" /> 
+     
+                    <div id="top" class="content-center brand"> 
+                        <div class="spacer-medium"></div> 
         
                     <h1 class="h1-seo">Our Goal: $150,000</h1>
                     <h2>Help sponsor a life-changing pump</h2>
