@@ -342,49 +342,187 @@
                                 <h3>$240.00 USD</h3>
 
                                 <nav>
-                                    <div class="nav nav-tabs" id="nav-tab-1" role="tablist">
-                                    <a class="nav-item nav-link active" id="nav-description-tab-1" data-toggle="tab" href="#nav-description-1"role="tab" aria-controls="nav-description-1" aria-selected="true">Description</a>
-                                    <a class="nav-item nav-link" id="nav-details-tab-1" data-toggle="tab" href="#nav-details-1" role="tab" aria-controls="nav-details-1" aria-selected="false">Details</a>
-                                    <a class="nav-item nav-link" id="nav-features-tab-1" data-toggle="tab" href="#nav-features-1" role="tab" aria-controls="nav-features-1" aria-selected="false">Features</a>
-                                    </div>
+                                  <div class="nav nav-tabs" id="nav-tab-1" role="tablist">
+                                  <a class="nav-item nav-link active" id="nav-description-tab-1" data-toggle="tab" href="#nav-description-1"role="tab" aria-controls="nav-description-1" aria-selected="true">Description</a>
+                                  <a class="nav-item nav-link" id="nav-details-tab-1" data-toggle="tab" href="#nav-details-1" role="tab" aria-controls="nav-details-1" aria-selected="false">Details</a>
+                                  <a class="nav-item nav-link" id="nav-features-tab-1" data-toggle="tab" href="#nav-features-1" role="tab" aria-controls="nav-features-1" aria-selected="false">Features</a>
+                                  </div>
                                 </nav>
                                 <div class="tab-content" id="nav-tabContent-1">
-                                    <div class="tab-pane fade show active" id="nav-description-1" role="tabpanel" aria-labelledby="nav-description-tab-1">
-                                    <p style="text-align: left; padding: 20px;">
-                                        The 90 Watt Solar Panel - Pump package features a state of the art pump design
-                                        which maximizes efficiency and effectiveness while maintaining a low cost.
-                                    </p>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-details-1" role="tabpanel" aria-labelledby="nav-details-tab-1">
+                                  <div class="tab-pane fade pumpinfo-box show active" id="nav-description-1" role="tabpanel" aria-labelledby="nav-description-tab-1">
+                                  <p class="pumpinfo-text">
+                                      The 90 Watt Solar Panel - Pump package features a state of the art pump design
+                                      which maximizes efficiency and effectiveness while maintaining a low cost.
+                                  </p>
+                                  </div>
+                                  <div class="tab-pane fade pumpinfo-box" id="nav-details-1" role="tabpanel" aria-labelledby="nav-details-tab-1">
 
                                     <table class="pumpinfo-table">
-                                        <tr class="pumpinfo-row">
+                                      <tr class="pumpinfo-row">
                                         <th class="pumpinfo-item">Depth</th>
                                         <th class="pumpinfo-item">Flow Rate (per sec)</th>
                                         <th class="pumpinfo-item">Flow Rate (per min)</th>
-                                        </tr>
-                                        <tr class="pumpinfo-row">
+                                      </tr>
+                                      <tr class="pumpinfo-row">
                                         <td class="pumpinfo-item">10 feet<br/>(3 meters)</td>
                                         <td class="pumpinfo-item">0.18 gal/sec<br/>(0.69 L/sec)</td>
                                         <td class="pumpinfo-item">11 gal/min<br/>(41.6 L/min)</td>
-                                        </tr>
-                                        <tr class="pumpinfo-row">
+                                      </tr>
+                                      <tr class="pumpinfo-row">
                                         <td class="pumpinfo-item">20 feet<br/>(6.1 meters)</td>
                                         <td class="pumpinfo-item">0.15 gal/sec<br/>(.57 L/sec)</td>
                                         <td class="pumpinfo-item">9 gal/min<br/>(34.1 L/min)</td>
-                                        </tr>
-                                        <tr class="pumpinfo-row">
+                                      </tr>
+                                      <tr class="pumpinfo-row">
                                         <td class="pumpinfo-item">30 feet<br/>(9 meters)</td>
                                         <td class="pumpinfo-item">0.10 gal/sec<br/>(.36 L/sec)</td>
                                         <td class="pumpinfo-item">5.7 gal/min<br/>(21.6 L/min)</td>
-                                        </tr>
+                                      </tr>
                                     </table>
 
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-features-1" role="tabpanel" aria-labelledby="nav-features-tab-1">underneath features tab</div>
+                                  </div>
+                                  <div class="tab-pane fade pumpinfo-box" id="nav-features-1" role="tabpanel" aria-labelledby="nav-features-tab-1">
+                                    <!-- <p class="pumpinfo-text">
+                                      underneath features tab
+                                    </p> -->
+
+                                    <div class="hotspot-img-container"></div>
+
+                                    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                                    <script src='https://ricostacruz.com/jquery.transit/jquery.transit.min.js'></script>
+                                    <script src="../assets/js/hotspots/index.js"></script>
+
+                                    <!-- <script>
+                                      var imageWidth = 2048,
+                                        imageHeight = 1364,
+                                        imageAspectRatio = imageWidth / imageHeight,
+                                        $window = $(window);
+
+                                      var hotSpots = [
+                                        {
+                                          title: "Mouth",
+                                          description: "scream.",
+                                          x: -600,
+                                          y: -180
+                                        },
+                                        {
+                                          title: "Body",
+                                          description: "Look at it.",
+                                          x: 108,
+                                          y: 20
+                                        },
+                                        {
+                                          title: "Antlers",
+                                          description: "They crazy.",
+                                          x: 40,
+                                          y: -170
+                                        },
+                                        {
+                                          title: "This Ear",
+                                          description: "It can hear things.",
+                                          x: -265,
+                                          y: -145
+                                        }
+                                      ];
+
+                                      function appendHotSpots() {
+                                        for (var i = 0; i < hotSpots.length; i++) {
+                                          var $hotSpot = $("<div>").addClass("hot-spot");
+                                          $(".container").append($hotSpot);
+                                        }
+                                        positionHotSpots();
+                                      }
+
+                                      function appendSpeechBubble() {
+                                        var $speechBubble = $("<div>").addClass("speech-bubble");
+                                        $(".container").append($speechBubble);
+                                      }
+
+                                      function handleHotSpotMouseover(e) {
+                                        var $currentHotSpot = $(e.currentTarget),
+                                          currentIndex = $currentHotSpot.index(),
+                                          $speechBubble = $(".speech-bubble"),
+                                          title = hotSpots[currentIndex]["title"],
+                                          description = hotSpots[currentIndex]["description"],
+                                          hotSpotTop = $currentHotSpot.offset().top,
+                                          hotSpotLeft = $currentHotSpot.offset().left,
+                                          hotSpotHalfSize = $currentHotSpot.width() / 2,
+                                          speechBubbleHalfSize = $speechBubble.width() / 2,
+                                          topTarget = hotSpotTop - $speechBubble.height(),
+                                          leftTarget = hotSpotLeft - speechBubbleHalfSize + hotSpotHalfSize;
+
+                                        $speechBubble.empty();
+                                        $speechBubble.append($("<h1>").text(title));
+                                        $speechBubble.append($("<p>").text(description));
+
+                                        $speechBubble
+                                          .css({
+                                            top: topTarget - 20,
+                                            left: leftTarget,
+                                            display: "block"
+                                          })
+                                          .stop()
+                                          .animate(
+                                            {
+                                              opacity: 1
+                                            },
+                                            200
+                                          );
+                                      }
+
+                                      function handleHotSpotMouseout() {
+                                        var $speechBubble = $(".speech-bubble");
+                                        $speechBubble.stop().animate(
+                                          {
+                                            opacity: 0
+                                          },
+                                          200,
+                                          function() {
+                                            $speechBubble.hide();
+                                          }
+                                        );
+                                      }
+
+                                      function positionHotSpots() {
+                                        var windowWidth = $window.width(),
+                                          windowHeight = $window.height(),
+                                          windowAspectRatio = windowWidth / windowHeight,
+                                          $hotSpot = $(".hot-spot");
+
+                                        $hotSpot.each(function(index) {
+                                          var xPos = hotSpots[index]["x"],
+                                            yPos = hotSpots[index]["y"],
+                                            desiredLeft = 0,
+                                            desiredTop = 0;
+
+                                          if (windowAspectRatio > imageAspectRatio) {
+                                            yPos = yPos / imageHeight * 100;
+                                            xPos = xPos / imageWidth * 100;
+                                          } else {
+                                            yPos = yPos / (windowAspectRatio / imageAspectRatio) / imageHeight * 100;
+                                            xPos = xPos / (windowAspectRatio / imageAspectRatio) / imageWidth * 100;
+                                          }
+
+                                          $(this).css({
+                                            "margin-top": yPos + "%",
+                                            "margin-left": xPos + "%"
+                                          });
+                                        });
+                                      }
+
+                                      appendHotSpots();
+                                      appendSpeechBubble();
+                                      $(window).resize(positionHotSpots);
+                                      $(".hot-spot").on("mouseover", handleHotSpotMouseover);
+                                      $(".hot-spot").on("mouseout", handleHotSpotMouseout);
+
+                                    </script> -->
+
+
+                                  </div>
                                 </div>
                                 <br />
-                            </div>
+                              </div>
                             </div>
 
                             <a id="buyPumpOption1" class="btn btn-lg btn-primary btn-hover">
@@ -392,21 +530,23 @@
                                 <i class="now-ui-icons shopping_cart-simple"></i>
                             </a>
 
+                            <div class="spacer"></div>
+
                             <script>
-                                function openData1(evt, dataName) {
-                                                var i, tabcontent, tablinks;
-                                                tabcontent = document.getElementsByClassName("tabcontent1");
-                                                for (i = 0; i < tabcontent.length; i++) {
-                                                    tabcontent[i].style.display = "none";
-                                                }
-                                                tablinks = document.getElementsByClassName("tablinks1");
-                                                for (i = 0; i < tablinks.length; i++) {
-                                                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                                                }
-                                                document.getElementById(dataName).style.display = "block";
-                                                evt.currentTarget.className += " active";
-                                            }
-                                document.getElementById("defaultOpen1").click();
+                              function openData1(evt, dataName) {
+                                var i, tabcontent, tablinks;
+                                tabcontent = document.getElementsByClassName("tabcontent1");
+                                for (i = 0; i < tabcontent.length; i++) {
+                                  tabcontent[i].style.display = "none";
+                                }
+                                tablinks = document.getElementsByClassName("tablinks1");
+                                for (i = 0; i < tablinks.length; i++) {
+                                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                }
+                                document.getElementById(dataName).style.display = "block";
+                                evt.currentTarget.className += " active";
+                              }
+                              document.getElementById("nav-description-tab-1").click();
                             </script>
 
                             </div>
@@ -426,13 +566,13 @@
                                     </div>
                                     </nav>
                                     <div class="tab-content" id="nav-tabContent-2">
-                                    <div class="tab-pane fade show active" id="nav-description-2" role="tabpanel" aria-labelledby="nav-description-tab-2">
-                                        <p style="text-align: left; padding: 20px;">
+                                    <div class="tab-pane fade pumpinfo-box show active" id="nav-description-2" role="tabpanel" aria-labelledby="nav-description-tab-2">
+                                        <p class="pumpinfo-text">
                                         The 60 Watt Solar Panel - Pump package features a state of the art pump design
                                         which maximizes efficiency and effectiveness while maintaining a low cost.
                                         </p>
                                     </div>
-                                    <div class="tab-pane fade" id="nav-details-2" role="tabpanel" aria-labelledby="nav-details-tab-2">
+                                    <div class="tab-pane fade pumpinfo-box" id="nav-details-2" role="tabpanel" aria-labelledby="nav-details-tab-2">
 
                                         <table class="pumpinfo-table">
                                         <tr class="pumpinfo-row">
@@ -458,7 +598,11 @@
                                         </table>
 
                                     </div>
-                                    <div class="tab-pane fade" id="nav-features-2" role="tabpanel" aria-labelledby="nav-features-tab-2">underneath features tab</div>
+                                    <div class="tab-pane fade pumpinfo-box" id="nav-features-2" role="tabpanel" aria-labelledby="nav-features-tab-2">
+                                      <p class="pumpinfo-text">
+                                        underneath features tab
+                                      </p>
+                                    </div>
                                     </div>
                                     <br />
                                 </div>
@@ -469,21 +613,23 @@
                                 <i class="now-ui-icons shopping_cart-simple"></i>
                             </a>
 
+                            <div class="spacer"></div>
+
                             <script>
                                 function openData2(evt, dataName) {
-                                                var i, tabcontent, tablinks;
-                                                tabcontent = document.getElementsByClassName("tabcontent2");
-                                                for (i = 0; i < tabcontent.length; i++) {
-                                                    tabcontent[i].style.display = "none";
-                                                }
-                                                tablinks = document.getElementsByClassName("tablinks2");
-                                                for (i = 0; i < tablinks.length; i++) {
-                                                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                                                }
-                                                document.getElementById(dataName).style.display = "block";
-                                                evt.currentTarget.className += " active";
-                                            }
-                                document.getElementById("defaultOpen2").click();
+                                    var i, tabcontent, tablinks;
+                                    tabcontent = document.getElementsByClassName("tabcontent2");
+                                    for (i = 0; i < tabcontent.length; i++) {
+                                        tabcontent[i].style.display = "none";
+                                    }
+                                    tablinks = document.getElementsByClassName("tablinks2");
+                                    for (i = 0; i < tablinks.length; i++) {
+                                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                    }
+                                    document.getElementById(dataName).style.display = "block";
+                                    evt.currentTarget.className += " active";
+                                }
+                                document.getElementById("nav-description-tab-2").click();
                             </script>
                         </div>
                     </div>
