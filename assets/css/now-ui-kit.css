@@ -113,6 +113,8 @@ width:50%;
   padding: 20px;
 }
 
+/* Version 1 of Hotspots */
+
 .hotspot-img-container {
   width: 100%;
   height: 100%;
@@ -197,6 +199,173 @@ width:50%;
   border-width: 10px;
   margin-left: -10px;
 }
+
+/* Version 2 of Hotspots */
+
+.hotspots-label:before, .hotspot:before {
+  content: "";
+  display: block;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMS42IDExLjYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDExLjYgMTEuNiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8bGluZSBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41NjI1IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHgxPSI1LjgiIHkxPSIxMS42IiB4Mj0iNS44IiB5Mj0iMCIvPg0KPGxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjAuNTYyNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMCIgeTE9IjUuOCIgeDI9IjExLjYiIHkyPSI1LjgiLz4NCjwvc3ZnPg0K");
+  background-size: 75%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.hotspots-label {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-font-smoothing: antialiased;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 350ms cubic-bezier(0.2, 0.5, 0.34, 1);
+  width: 100%;
+}
+.hotspots-label:before {
+  display: none;
+}
+@media screen and (max-width: 580px) {
+  .hotspots-label {
+    width: 100%;
+    height: 100%;
+    padding: 50px 40px;
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+  .hotspots-label strong {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .hotspots-label span {
+    display: block;
+  }
+  .hotspots-label:before {
+    display: block;
+    top: 25px;
+    left: auto;
+    right: 4px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    cursor: pointer;
+  }
+}
+.hotspots-label.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hotspot-toggle {
+  padding: 20px;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  line-height: 40px;
+  border-radius: 20px;
+  font-size: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  opacity: 0;
+  width: 0;
+  transition: opacity 650ms ease-in, width 350ms linear;
+  text-indent: -9999em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.hotspot-toggle.is-visible {
+  opacity: 1;
+}
+.hotspot-toggle.is-active {
+  padding: 0 20px 0 50px;
+  text-indent: 0;
+  width: auto;
+}
+.hotspot-toggle.is-active:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.hotspot-toggle:before {
+  transition: -webkit-transform 150ms cubic-bezier(0.2, 0.5, 0.34, 1);
+  transition: transform 150ms cubic-bezier(0.2, 0.5, 0.34, 1);
+  transition: transform 150ms cubic-bezier(0.2, 0.5, 0.34, 1), -webkit-transform 150ms cubic-bezier(0.2, 0.5, 0.34, 1);
+}
+@media screen and (max-width: 960px) {
+  .hotspot-toggle {
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    padding: 15px;
+  }
+  .hotspot-toggle.is-active {
+    padding: 0 15px 0 35px;
+    text-indent: 0;
+    width: auto;
+  }
+  .hotspot-toggle:before {
+    top: 2px;
+    left: 2px;
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .hotspot-toggle {
+    padding: 12px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+  }
+  .hotspot-toggle.is-active {
+    padding: 0 10px 0 30px;
+    text-indent: 0;
+    width: auto;
+  }
+  .hotspot-toggle:before {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.hotspot-toggle-image {
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.hotspot-toggle-image:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 70%;
+}
+.hotspot-toggle-image .contain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/6444/interior-01-RHD.jpg);
+  background-size: cover;
+}
+
 
 .spacer-small {
     height: 2ex;
