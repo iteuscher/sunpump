@@ -6500,10 +6500,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .index-page .page-header {
-<<<<<<< Updated upstream
     height: 100vh;
-=======
-    height: 90vh;
 }
 
 .page-header-donate {
@@ -6512,7 +6509,6 @@ Created using IcoMoon - icomoon.io
 
 .donate-spacer {
     padding-top: 10vh !important;
->>>>>>> Stashed changes
 }
 
 .index-page .page-header .container>.content-center {
