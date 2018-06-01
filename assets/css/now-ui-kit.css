@@ -29,6 +29,22 @@ designed from
 ===============================
 Colors
     #55acee  -- twitter light blue
+--------------------------
+
+    #2a4384 -- main indigo color
+    #a4d6ae -- accent green color
+
+    LOGO INFO
+    Quicksand Medium (Google Fonts - https://fonts.google.com/specimen/Quicksand)
+
+    Pantone 7687 C,  Pantone 344 C
+        C: 97 M: 85 Y: 18 K: 5
+        R: 42 G: 67 B: 132
+        #2a4384
+
+        C: 37 M: 0 Y: 40 K: 0
+        R: 164 G: 214 B: 174
+        #a4d6ae
 
 ===============================
 */
@@ -46,9 +62,11 @@ Colors
     background: -webkit-linear-gradient(to right, #55acee, #56CCF2);
     background: linear-gradient(to right, #55acee, #56CCF2); */
 
-    background: #56CCF2;
+    /* background: #56CCF2;
     background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
-    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    background: linear-gradient(to right, #2F80ED, #56CCF2); */
+
+    background: white;
 
     box-shadow: none;
 }
@@ -749,8 +767,8 @@ fill: rgb(180, 180, 180) !important;
 }
 
 .nav-logo {
-    height: 1.8rem;
-    width: auto;
+    height: auto;
+    width: 8.5rem;
     left: 0;
     padding: 0;
     margin: 0;
@@ -981,8 +999,9 @@ textarea {
 .banner {
         /* https://uigradients.com/#BlueSkies */
     background: #55acee;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #55acee, #56CCF2);
-    background: linear-gradient(to right, #55acee, #56CCF2);
+    /* background: -webkit-linear-gradient(to right, #55acee, #56CCF2);
+    background: linear-gradient(to right, #55acee, #56CCF2); */
+    background: #2F3C6B;
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -3232,7 +3251,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 }
 
 .btn-primary {
-    background-color: #55acee;
+    background-color: #2F3C6B;;
     color: #FFFFFF;
 }
 
@@ -3247,7 +3266,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .show>.btn-primary.dropdown-toggle,
 .show>.btn-primary.dropdown-toggle:focus,
 .show>.btn-primary.dropdown-toggle:hover {
-    background-color: #55acee;
+    background-color: #2F3C6B;;
     color: #FFFFFF;
     box-shadow: none;
 }
@@ -3633,7 +3652,7 @@ fieldset[disabled] .btn-danger.active {
 
 .btn-neutral {
     background-color: #FFFFFF;
-    color: #55acee;
+    color: #2F3C6B;;
 }
 
 .btn-neutral:hover,
@@ -3794,11 +3813,16 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .btn-round {
-    border-width: 1px;
     border-radius: 30px !important;
     padding: 11px 22px;
     margin: 10px;
-    color: #55acee !important;
+    color: #2F3C6B !important;
+    border: 1px solid #2F3C6B !important;
+    line-height: inital !important;
+}
+
+.btn-round:hover {
+    border: 1px solid rgb(69, 208, 69) !important;
 }
 
 .btn-round.btn-simple {
@@ -4789,12 +4813,12 @@ small {
 }
 
 a {
-    color: #55acee;
+    color: #2F3C6B;;
 }
 
 a:hover,
 a:focus {
-    color: #55acee;
+    color: #2F3C6B;
 }
 
 h1,
@@ -5274,6 +5298,7 @@ body {
 
 .navbar a:not(.btn):not(.dropdown-item) {
     color: #FFFFFF;
+    color: #2F3C6B;
 }
 
 .navbar p {
@@ -5344,7 +5369,8 @@ body {
 .navbar .navbar-nav .nav-item .nav-link:not(.btn):focus,
 .navbar .navbar-nav .nav-item .nav-link:not(.btn):hover,
 .navbar .navbar-nav .nav-item .nav-link:not(.btn):active {
-    background-color: rgba(255, 255, 255, 0.2);
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    background-color: rgb(47, 60, 107, 0.25);
     border-radius: 0.1875rem;
 }
 
@@ -7235,9 +7261,11 @@ Created using IcoMoon - icomoon.io
 
     /* https://uigradients.com/#BlueSkies */
     background: #56CCF2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2); 
+    background: linear-gradient(to right, #2F80ED, #56CCF2);  */
 
+
+    background: #2F3C6B;
     position: absolute;
     background-size: cover;
     background-position: center center;
@@ -7738,6 +7766,7 @@ Created using IcoMoon - icomoon.io
     }
     .sidebar-collapse .navbar-collapse:before {
         background: #55acee;
+        background: #2F3C6B;
         /* opacity: 0.9; */
         filter: alpha(opacity=90);
         display: block;
