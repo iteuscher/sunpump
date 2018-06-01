@@ -1256,6 +1256,7 @@
             let button = document.getElementById("button");
             let smallBar = document.getElementById("smallProgressBar");
             let bigBar = document.getElementById("bigProgressBar");
+            let currentPumpNumber = document.getElementById("currentPumpNumber");
             let bigBarPercent = document.getElementById("total-progress-percent");
             let bigBarValue = document.getElementById("total-progress-value");
             let progressValue = document.getElementById("progress-value");
@@ -1348,9 +1349,11 @@
                 console.log("THIS IS THE COUNT: " + count);
 
                 if(count == 1){
+                    currentPumpNumber.innerText = "Pump #" + (count + 1) + "/1000";
                     totalPumpNumber.innerText = count + " Pump";
                 }
                 else{
+                    currentPumpNumber.innerText = "Pump #" + (count + 1) + "/1000";
                     totalPumpNumber.innerText = count + " Pumps";
                 }
 
