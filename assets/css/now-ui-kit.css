@@ -134,8 +134,12 @@ width:50%;
   line-height: 1.5;
 }
 
-.pumpinfo-list-item {
+.pumpinfo-list {
   text-align: left !important;
+  font-size: 18px;
+}
+
+.pumpinfo-list > li {
   font-size: 16px;
 }
 
@@ -417,7 +421,7 @@ width:50%;
   padding-top: 20px;
   border-top: 1px solid #ddd;
   overflow: scroll;
-  height: 250px;
+  height: 200px;
 }
 
 .css-buytabs-button {
