@@ -4837,12 +4837,16 @@ small {
 }
 
 a {
-    color: #2F3C6B;;
+    color: #2F3C6B;
+    text-decoration: underline;
+    transition: all 0.15s;
 }
 
 a:hover,
 a:focus {
-    color: #2F3C6B;
+    color: rgb(69, 208, 69);
+    transition: all 0.15s;
+
 }
 
 h1,
@@ -7883,7 +7887,7 @@ Created using IcoMoon - icomoon.io
         width: 22px;
         height: 1px;
         border-radius: 1px;
-        background: #FFFFFF;
+        background: #2F3C6B;
     }
     .sidebar-collapse .navbar .navbar-toggler-bar+.navbar-toggler-bar {
         margin-top: 7px;

@@ -1,9 +1,9 @@
 $(function(){
     $("#pieChart").drawPieChart([
       { title: "Pump",         value : 60,  color: "#02B3E7" },
-      { title: "Solar Panel",  value:  144,   color: "#CFD3D6" },
-      { title: "Shipping",     value : 70,   color: "#736D79" },
-      { title: "Last Mile Distribution",      value:  43,   color: "#776068" },
+      { title: "Solar Panel", value: 144, color: "#FFEC62" },
+      { title: "Distribution", value: 43, color: "#CFD3D6" },
+      { title: "Shipping", value: 70, color: "#736D79" },
       { title: "Admin",        value : 43,   color: "#EB0D42" }
     ]);
   });
