@@ -109,7 +109,7 @@ width:50%;
 
 .pumpinfo-table {
   border-collapse: collapse;
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -133,6 +133,21 @@ width:50%;
   padding: 20px;
   line-height: 1.5;
 }
+
+.pumpinfo-list-item {
+  text-align: left !important;
+  font-size: 16px;
+}
+
+.buy-button {
+  color: white !important;
+}
+
+.buy-image {
+  height: 300px;
+  width: auto;
+}
+
 
 /* Version 1 of Hotspots */
 
@@ -399,10 +414,10 @@ width:50%;
 
 .css-buytabs-content {
   display: none;
-  padding: 20px 0 0;
+  padding-top: 20px;
   border-top: 1px solid #ddd;
   overflow: scroll;
-  height: 350px;
+  height: 250px;
 }
 
 .css-buytabs-button {
@@ -412,7 +427,7 @@ width:50%;
 .css-buytabs-label {
   display: inline-block;
   margin: 0 0 -1px;
-  padding: 15px 25px;
+  padding: 15px 15px;
   font-weight: 600;
   text-align: center;
   color: #bbb;
@@ -425,15 +440,22 @@ width:50%;
   margin-right: 10px;
 }
 
+.css-buytabs-label[for*='1-1']:before { content: "\f0f6"; }
+.css-buytabs-label[for*='2-1']:before { content: "\f00b"; }
+.css-buytabs-label[for*='3-1']:before { content: "\f05a"; }
+.css-buytabs-label[for*='1-2']:before { content: "\f0f6"; }
+.css-buytabs-label[for*='2-2']:before { content: "\f00b"; }
+.css-buytabs-label[for*='3-2']:before { content: "\f05a"; }
+
 .css-buytabs-label:hover {
   color: #888;
   cursor: pointer;
 }
 
-.cssbuytabs-button:checked + .css-buytabs-label {
+.css-buytabs-button:checked + .css-buytabs-label {
   color: #555;
   border: 1px solid #ddd;
-  border-top: 2px solid orange;
+  border-top: 2px solid #2a4384;
   border-bottom: 1px solid #fff;
 }
 
@@ -466,6 +488,7 @@ width:50%;
     padding: 15px;
   }
 }
+
 
 
 
@@ -7262,7 +7285,7 @@ Created using IcoMoon - icomoon.io
 
     /* https://uigradients.com/#BlueSkies */
     background: #56CCF2;  /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2); 
+    /* background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
     background: linear-gradient(to right, #2F80ED, #56CCF2);  */
 
 
