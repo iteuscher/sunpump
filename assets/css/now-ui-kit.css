@@ -3823,6 +3823,7 @@ fieldset[disabled] .btn-neutral.active {
 
 .btn-round:hover {
     border: 1px solid rgb(69, 208, 69) !important;
+    color: white !important;
 }
 
 .btn-round.btn-simple {
