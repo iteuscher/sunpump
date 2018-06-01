@@ -56,7 +56,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 //Server rendering setup
-app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'assets/favicons', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -164,11 +164,16 @@ app.post ('/purchase', function(req, res) {
   })
 })
 
-let url = "https://cbracco%40encaptech.com:UJtzrkflnFwxKaUjvEiBP0mYc6W3mkGyjHXfi37Gp48ymnGwgMOiKw@donorbox.org/api/v1/donations";
+let getDonationsURL = "https://cbracco%40encaptech.com:UJtzrkflnFwxKaUjvEiBP0mYc6W3mkGyjHXfi37Gp48ymnGwgMOiKw@donorbox.org/api/v1/donations";
 let donations = [];
 let donationsLength = 0;
 
+let getDonorsURL = "https://cbracco%40encaptech.com:UJtzrkflnFwxKaUjvEiBP0mYc6W3mkGyjHXfi37Gp48ymnGwgMOiKw@donorbox.org/api/v1/donors";
+let donors = [];
+let donorsLength = 0;
+
 updateDonations();
+updateDonorList();
 
 donationsLength = donations.length;
 
@@ -191,12 +196,27 @@ app.get('/api/updateDonations', function(req, res){
     io.emit("donation", tempDonation);
     res.send("Success");
   }
-
-
 });
 
+app.get('/api/donorsLength', function(req, res){
+  res.send(JSON.stringify({donorsLength: donorsLength}));
+});
+
+function updateDonorList(){
+  request(getDonorsURL, function(error, response, body){
+    if(error){
+      console.log("ERROR: Unable to update donors");
+    }
+    else{
+      let rawDonors = JSON.parse(body);
+      donors = rawDonors;
+      donorsLength = rawDonors.length; 
+    }
+  });
+}
+
 function updateDonations(){
-  request(url, function (error, response, body) {
+  request(getDonationsURL, function (error, response, body) {
     if(error){
       console.log("ERROR: Unable to update donations")
     }

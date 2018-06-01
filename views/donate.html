@@ -1267,6 +1267,8 @@
             let messageList = document.getElementById("messages");
             let counter = document.getElementById("counter");
             let totalPumpNumber = document.getElementById("total-pump-number");
+        
+            let numDonors = 0;
 
             let totalRaised = 0;
             let count = 0;
@@ -1285,6 +1287,7 @@
             
 
             populateDonations();
+            populateDonors();
  
 
             function setTotalRaised(){
@@ -1295,6 +1298,15 @@
                         setDonationBar(totalRaised);
                     })
                 });
+            }
+
+            function populateDonors(){
+                fetch("/api/donorsLength").then(function(response){
+                    response.json().then(function(res){
+                        numDonors = res.donorsLength;
+                        console.log("DONORS LENGTH: " + numDonors);
+                    })
+                })
             }
 
             function populateDonations(){
