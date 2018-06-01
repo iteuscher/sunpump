@@ -87,6 +87,8 @@ width:50%;
     display: flex;
 }
 
+/* buy stuff with tabs */
+
 .pumpinfo-table {
   border-collapse: collapse;
   width: 80%;
@@ -111,6 +113,7 @@ width:50%;
 .pumpinfo-text {
   text-align: left;
   padding: 20px;
+  line-height: 1.5;
 }
 
 /* Version 1 of Hotspots */
@@ -365,6 +368,88 @@ width:50%;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/6444/interior-01-RHD.jpg);
   background-size: cover;
 }
+
+/* CSS Tabs */
+
+.css-buytabs-container {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.css-buytabs-content {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+  overflow: scroll;
+  height: 350px;
+}
+
+.css-buytabs-button {
+  display: none;
+}
+
+.css-buytabs-label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+.css-buytabs-label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.css-buytabs-label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.cssbuytabs-button:checked + .css-buytabs-label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1-2:checked ~ #content1-2,
+#tab2-2:checked ~ #content2-2,
+#tab3-2:checked ~ #content3-2,
+#tab4-2:checked ~ #content4-2 {
+  display: block;
+}
+
+#tab1-1:checked ~ #content1-1,
+#tab2-1:checked ~ #content2-1,
+#tab3-1:checked ~ #content3-1,
+#tab4-1:checked ~ #content4-1 {
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  .css-buytabs-label{
+    font-size: 0;
+  }
+
+  .css-buytabs-label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .css-buytabs-label {
+    padding: 15px;
+  }
+}
+
+
 
 
 .spacer-small {
