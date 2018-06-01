@@ -3894,7 +3894,7 @@ fieldset[disabled] .btn-link.active {
     padding: 18px 25px;
     max-width:100%;
     cursor: pointer;
-    color: white !important;
+    color: white;
     /* transition: 0.s; */
 }
 @media (min-width: 400px)
@@ -3946,7 +3946,7 @@ fieldset[disabled] .btn-link.active {
 
 .btn-hover:hover {
     background-color: rgb(69, 208, 69);
-    color: white !important;
+    color: white;
 }
 
 
