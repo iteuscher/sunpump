@@ -140,11 +140,6 @@ app.use('/donate', donate);
 
   });
 
-
-
-
-
-
 app.post ('/purchase', function(req, res) {
 
   res.send("success")

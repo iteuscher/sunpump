@@ -582,7 +582,7 @@
                                     <circle fill="#FFA726" cx="36" cy="21" r="5"></circle>
                                 </g>
                             </svg>
-                            <h5 style="padding-top: 0; margin-top: 0;">23 Donors</h5>
+                            <h5 id="numDonorsHeader" style="padding-top: 0; margin-top: 0;">0 Donors</h5>
                             
                             <div class="spacer-small"></div>
                             
@@ -1282,6 +1282,7 @@
             let messageList = document.getElementById("messages");
             let counter = document.getElementById("counter");
             let totalPumpNumber = document.getElementById("total-pump-number");
+            let numDonorsHeader = document.getElementById("numDonorsHeader");
         
             let numDonors = 0;
 
@@ -1319,7 +1320,12 @@
                 fetch("/api/donorsLength").then(function(response){
                     response.json().then(function(res){
                         numDonors = res.donorsLength;
-                        console.log("DONORS LENGTH: " + numDonors);
+                        if(numDonors == 1){
+                            numDonorsHeader.innerText = numDonors + " Donor";
+                        }
+                        else{
+                            numDonorsHeader.innerText = numDonors + " Donors";
+                        }
                     })
                 })
             }
