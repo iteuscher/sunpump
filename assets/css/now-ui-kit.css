@@ -158,6 +158,10 @@ width:50%;
   width: auto;
 }
 
+.buy-carousel-button {
+  background: #a4d6ae;
+}
+
 
 /* Version 1 of Hotspots */
 
@@ -427,7 +431,7 @@ width:50%;
   padding-top: 20px;
   border-top: 1px solid #ddd;
   overflow: scroll;
-  height: 250px;
+  height: 225px;
 }
 
 .css-buytabs-button {
