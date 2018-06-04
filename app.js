@@ -205,7 +205,7 @@ function updateDonorList(){
     else{
       let rawDonors = JSON.parse(body);
       donors = rawDonors;
-      donorsLength = rawDonors.length; 
+      donorsLength = rawDonors.length;
     }
   });
 }

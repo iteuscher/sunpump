@@ -14,6 +14,9 @@ $('a[href*="#"]')
     .not('[href="#nav-description-2"]')
     .not('[href="#nav-details-2"]')
     .not('[href="#nav-features-2"]')
+    .not('[href="#buy-carouselIndicators-1"]')
+    .not('[href="#buy-carouselIndicators-2"]')
+
     .click(function (event) {
         // On-page links
         if (
