@@ -107,6 +107,12 @@ width:50%;
 
 /* buy stuff with tabs */
 
+.buy-container {
+  margin: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 .pumpinfo-table {
   border-collapse: collapse;
   width: 100%;
